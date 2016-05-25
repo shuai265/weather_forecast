@@ -10,4 +10,6 @@
 
 @interface WFDaysView : UIView
 
+@property (nonatomic,strong) NSArray *weathersToCalc;
+
 @end

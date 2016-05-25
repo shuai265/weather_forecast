@@ -7,6 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B13F2121CEDDE8A003473B1 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B13F2111CEDDE8A003473B1 /* background.jpg */; };
+		4B75752C1CF12C930060ECD8 /* NSDate+WFDateExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B75752B1CF12C930060ECD8 /* NSDate+WFDateExtension.m */; };
+		4B7575301CF201000060ECD8 /* UIImage+RTTint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B75752F1CF201000060ECD8 /* UIImage+RTTint.m */; };
+		4B8DDB3A1CF2CAEE00913026 /* NFCityWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8DDB391CF2CAEE00913026 /* NFCityWeatherModel.m */; };
+		4B8DDB3E1CF468E100913026 /* NFWeatherService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8DDB3D1CF468E100913026 /* NFWeatherService.m */; };
+		4B8DDB411CF46A9900913026 /* NFCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8DDB401CF46A9900913026 /* NFCity.m */; };
+		4B8DDB441CF49BBE00913026 /* WFMianNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8DDB431CF49BBE00913026 /* WFMianNavigationController.m */; };
+		4BA14E6E1CF4BFC80081617C /* CAShapeLayer+WCPullRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E631CF4BFC80081617C /* CAShapeLayer+WCPullRefresh.m */; };
+		4BA14E6F1CF4BFC80081617C /* NSDate+WCPullRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E651CF4BFC80081617C /* NSDate+WCPullRefresh.m */; };
+		4BA14E701CF4BFC80081617C /* WCMagicSquareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E671CF4BFC80081617C /* WCMagicSquareView.m */; };
+		4BA14E711CF4BFC80081617C /* WCProgressItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E691CF4BFC80081617C /* WCProgressItem.m */; };
+		4BA14E721CF4BFC80081617C /* WCPullRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E6B1CF4BFC80081617C /* WCPullRefreshControl.m */; };
+		4BA14E731CF4BFC80081617C /* WCRefreshingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E6D1CF4BFC80081617C /* WCRefreshingItem.m */; };
+		4BA14E761CF4C1B10081617C /* WCGraintCircleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E751CF4C1B10081617C /* WCGraintCircleLayer.m */; };
+		4BA14EA41CF566080081617C /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E7A1CF566080081617C /* MJRefreshAutoFooter.m */; };
+		4BA14EA51CF566080081617C /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E7C1CF566080081617C /* MJRefreshBackFooter.m */; };
+		4BA14EA61CF566080081617C /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E7E1CF566080081617C /* MJRefreshComponent.m */; };
+		4BA14EA71CF566080081617C /* MJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E801CF566080081617C /* MJRefreshFooter.m */; };
+		4BA14EA81CF566080081617C /* MJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E821CF566080081617C /* MJRefreshHeader.m */; };
+		4BA14EA91CF566080081617C /* MJRefreshAutoGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E871CF566080081617C /* MJRefreshAutoGifFooter.m */; };
+		4BA14EAA1CF566080081617C /* MJRefreshAutoNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E891CF566080081617C /* MJRefreshAutoNormalFooter.m */; };
+		4BA14EAB1CF566080081617C /* MJRefreshAutoStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E8B1CF566080081617C /* MJRefreshAutoStateFooter.m */; };
+		4BA14EAC1CF566080081617C /* MJRefreshBackGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E8E1CF566080081617C /* MJRefreshBackGifFooter.m */; };
+		4BA14EAD1CF566080081617C /* MJRefreshBackNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E901CF566080081617C /* MJRefreshBackNormalFooter.m */; };
+		4BA14EAE1CF566080081617C /* MJRefreshBackStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E921CF566080081617C /* MJRefreshBackStateFooter.m */; };
+		4BA14EAF1CF566080081617C /* MJRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E951CF566080081617C /* MJRefreshGifHeader.m */; };
+		4BA14EB01CF566080081617C /* MJRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E971CF566080081617C /* MJRefreshNormalHeader.m */; };
+		4BA14EB11CF566080081617C /* MJRefreshStateHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E991CF566080081617C /* MJRefreshStateHeader.m */; };
+		4BA14EB21CF566080081617C /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4BA14E9A1CF566080081617C /* MJRefresh.bundle */; };
+		4BA14EB31CF566080081617C /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E9D1CF566080081617C /* MJRefreshConst.m */; };
+		4BA14EB41CF566080081617C /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E9F1CF566080081617C /* UIScrollView+MJExtension.m */; };
+		4BA14EB51CF566080081617C /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14EA11CF566080081617C /* UIScrollView+MJRefresh.m */; };
+		4BA14EB61CF566080081617C /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14EA31CF566080081617C /* UIView+MJExtension.m */; };
+		4BA14EB81CF56E2F0081617C /* Setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BA14EB71CF56E2F0081617C /* Setting.png */; };
+		4BA14EBB1CF5BB6C0081617C /* WFCityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14EBA1CF5BB6C0081617C /* WFCityTableViewController.m */; };
 		4BC6EB861CED2C8C00E74136 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6EB851CED2C8C00E74136 /* main.m */; };
 		4BC6EB891CED2C8C00E74136 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6EB881CED2C8C00E74136 /* AppDelegate.m */; };
 		4BC6EB8C1CED2C8C00E74136 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6EB8B1CED2C8C00E74136 /* ViewController.m */; };
@@ -15,6 +50,27 @@
 		4BC6EB941CED2C8D00E74136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6EB921CED2C8D00E74136 /* LaunchScreen.storyboard */; };
 		4BC6EB9F1CED2C8D00E74136 /* weatherForecastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6EB9E1CED2C8D00E74136 /* weatherForecastTests.m */; };
 		4BC6EBAA1CED2C8D00E74136 /* weatherForecastUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6EBA91CED2C8D00E74136 /* weatherForecastUITests.m */; };
+		4BC6EBBA1CED2CB200E74136 /* WFMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6EBB91CED2CB200E74136 /* WFMainViewController.m */; };
+		4BC6EBBD1CED2DB200E74136 /* NFWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6EBBC1CED2DB200E74136 /* NFWeatherModel.m */; };
+		4BC6EBC01CED790400E74136 /* WFDaysView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6EBBF1CED790400E74136 /* WFDaysView.m */; };
+		4BC6EBD01CEDCD2A00E74136 /* moon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6EBC21CEDCD2A00E74136 /* moon.png */; };
+		4BC6EBD11CEDCD2A00E74136 /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6EBC31CEDCD2A00E74136 /* sun.png */; };
+		4BC6EBD21CEDCD2A00E74136 /* 雾霾.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6EBC41CEDCD2A00E74136 /* 雾霾.png */; };
+		4BC6EBD31CEDCD2A00E74136 /* 刷新.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6EBC51CEDCD2A00E74136 /* 刷新.png */; };
+		4BC6EBD41CEDCD2A00E74136 /* 天气－小雨.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6EBC61CEDCD2A00E74136 /* 天气－小雨.png */; };
+		4BC6EBD51CEDCD2A00E74136 /* 天气－晴.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6EBC71CEDCD2A00E74136 /* 天气－晴.png */; };
+		4BC6EBD61CEDCD2A00E74136 /* 天气－未知.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6EBC81CEDCD2A00E74136 /* 天气－未知.png */; };
+		4BC6EBD71CEDCD2A00E74136 /* 天气－雷阵雨.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6EBC91CEDCD2A00E74136 /* 天气－雷阵雨.png */; };
+		4BC6EBD81CEDCD2A00E74136 /* 天气－雾.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6EBCA1CEDCD2A00E74136 /* 天气－雾.png */; };
+		4BC6EBD91CEDCD2A00E74136 /* 天气－霾.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6EBCB1CEDCD2A00E74136 /* 天气－霾.png */; };
+		4BC6EBDA1CEDCD2A00E74136 /* 天气－风.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6EBCC1CEDCD2A00E74136 /* 天气－风.png */; };
+		4BC6EBDB1CEDCD2A00E74136 /* 温度计.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6EBCD1CEDCD2A00E74136 /* 温度计.png */; };
+		4BC6EBDC1CEDCD2A00E74136 /* 湿度.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6EBCE1CEDCD2A00E74136 /* 湿度.png */; };
+		4BC6EBDD1CEDCD2A00E74136 /* 风.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6EBCF1CEDCD2A00E74136 /* 风.png */; };
+		4BC6EBDF1CEDCD6A00E74136 /* login_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6EBDE1CEDCD6A00E74136 /* login_bg@3x.png */; };
+		4FCAE6F4FE83E046DED8C1B5 /* libPods-weatherForecast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 595C42931ADA176C4B2E5AEF /* libPods-weatherForecast.a */; };
+		7B50FD9626303FD6ACAF27FF /* libPods-weatherForecastUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBC1827A06C9144001F1A26 /* libPods-weatherForecastUITests.a */; };
+		AA49E176DBAB395A32556604 /* libPods-weatherForecastTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C58909EECD88368C400760 /* libPods-weatherForecastTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +91,75 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22609B92077B3B16E385C400 /* Pods-weatherForecastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherForecastTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weatherForecastTests/Pods-weatherForecastTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4B13F2111CEDDE8A003473B1 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		4B75752A1CF12C930060ECD8 /* NSDate+WFDateExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WFDateExtension.h"; sourceTree = "<group>"; };
+		4B75752B1CF12C930060ECD8 /* NSDate+WFDateExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WFDateExtension.m"; sourceTree = "<group>"; };
+		4B75752E1CF201000060ECD8 /* UIImage+RTTint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RTTint.h"; sourceTree = "<group>"; };
+		4B75752F1CF201000060ECD8 /* UIImage+RTTint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RTTint.m"; sourceTree = "<group>"; };
+		4B8DDB381CF2CAEE00913026 /* NFCityWeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFCityWeatherModel.h; sourceTree = "<group>"; };
+		4B8DDB391CF2CAEE00913026 /* NFCityWeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFCityWeatherModel.m; sourceTree = "<group>"; };
+		4B8DDB3C1CF468E100913026 /* NFWeatherService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFWeatherService.h; sourceTree = "<group>"; };
+		4B8DDB3D1CF468E100913026 /* NFWeatherService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFWeatherService.m; sourceTree = "<group>"; };
+		4B8DDB3F1CF46A9900913026 /* NFCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFCity.h; sourceTree = "<group>"; };
+		4B8DDB401CF46A9900913026 /* NFCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFCity.m; sourceTree = "<group>"; };
+		4B8DDB421CF49BBE00913026 /* WFMianNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFMianNavigationController.h; sourceTree = "<group>"; };
+		4B8DDB431CF49BBE00913026 /* WFMianNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFMianNavigationController.m; sourceTree = "<group>"; };
+		4BA14E621CF4BFC80081617C /* CAShapeLayer+WCPullRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+WCPullRefresh.h"; sourceTree = "<group>"; };
+		4BA14E631CF4BFC80081617C /* CAShapeLayer+WCPullRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+WCPullRefresh.m"; sourceTree = "<group>"; };
+		4BA14E641CF4BFC80081617C /* NSDate+WCPullRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WCPullRefresh.h"; sourceTree = "<group>"; };
+		4BA14E651CF4BFC80081617C /* NSDate+WCPullRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WCPullRefresh.m"; sourceTree = "<group>"; };
+		4BA14E661CF4BFC80081617C /* WCMagicSquareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCMagicSquareView.h; sourceTree = "<group>"; };
+		4BA14E671CF4BFC80081617C /* WCMagicSquareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCMagicSquareView.m; sourceTree = "<group>"; };
+		4BA14E681CF4BFC80081617C /* WCProgressItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCProgressItem.h; sourceTree = "<group>"; };
+		4BA14E691CF4BFC80081617C /* WCProgressItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCProgressItem.m; sourceTree = "<group>"; };
+		4BA14E6A1CF4BFC80081617C /* WCPullRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCPullRefreshControl.h; sourceTree = "<group>"; };
+		4BA14E6B1CF4BFC80081617C /* WCPullRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCPullRefreshControl.m; sourceTree = "<group>"; };
+		4BA14E6C1CF4BFC80081617C /* WCRefreshingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCRefreshingItem.h; sourceTree = "<group>"; };
+		4BA14E6D1CF4BFC80081617C /* WCRefreshingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCRefreshingItem.m; sourceTree = "<group>"; };
+		4BA14E741CF4C1B10081617C /* WCGraintCircleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGraintCircleLayer.h; sourceTree = "<group>"; };
+		4BA14E751CF4C1B10081617C /* WCGraintCircleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGraintCircleLayer.m; sourceTree = "<group>"; };
+		4BA14E791CF566080081617C /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
+		4BA14E7A1CF566080081617C /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
+		4BA14E7B1CF566080081617C /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
+		4BA14E7C1CF566080081617C /* MJRefreshBackFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBackFooter.m; sourceTree = "<group>"; };
+		4BA14E7D1CF566080081617C /* MJRefreshComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshComponent.h; sourceTree = "<group>"; };
+		4BA14E7E1CF566080081617C /* MJRefreshComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshComponent.m; sourceTree = "<group>"; };
+		4BA14E7F1CF566080081617C /* MJRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooter.h; sourceTree = "<group>"; };
+		4BA14E801CF566080081617C /* MJRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooter.m; sourceTree = "<group>"; };
+		4BA14E811CF566080081617C /* MJRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeader.h; sourceTree = "<group>"; };
+		4BA14E821CF566080081617C /* MJRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeader.m; sourceTree = "<group>"; };
+		4BA14E861CF566080081617C /* MJRefreshAutoGifFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoGifFooter.h; sourceTree = "<group>"; };
+		4BA14E871CF566080081617C /* MJRefreshAutoGifFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoGifFooter.m; sourceTree = "<group>"; };
+		4BA14E881CF566080081617C /* MJRefreshAutoNormalFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoNormalFooter.h; sourceTree = "<group>"; };
+		4BA14E891CF566080081617C /* MJRefreshAutoNormalFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoNormalFooter.m; sourceTree = "<group>"; };
+		4BA14E8A1CF566080081617C /* MJRefreshAutoStateFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoStateFooter.h; sourceTree = "<group>"; };
+		4BA14E8B1CF566080081617C /* MJRefreshAutoStateFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoStateFooter.m; sourceTree = "<group>"; };
+		4BA14E8D1CF566080081617C /* MJRefreshBackGifFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackGifFooter.h; sourceTree = "<group>"; };
+		4BA14E8E1CF566080081617C /* MJRefreshBackGifFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBackGifFooter.m; sourceTree = "<group>"; };
+		4BA14E8F1CF566080081617C /* MJRefreshBackNormalFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackNormalFooter.h; sourceTree = "<group>"; };
+		4BA14E901CF566080081617C /* MJRefreshBackNormalFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBackNormalFooter.m; sourceTree = "<group>"; };
+		4BA14E911CF566080081617C /* MJRefreshBackStateFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackStateFooter.h; sourceTree = "<group>"; };
+		4BA14E921CF566080081617C /* MJRefreshBackStateFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBackStateFooter.m; sourceTree = "<group>"; };
+		4BA14E941CF566080081617C /* MJRefreshGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshGifHeader.h; sourceTree = "<group>"; };
+		4BA14E951CF566080081617C /* MJRefreshGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshGifHeader.m; sourceTree = "<group>"; };
+		4BA14E961CF566080081617C /* MJRefreshNormalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshNormalHeader.h; sourceTree = "<group>"; };
+		4BA14E971CF566080081617C /* MJRefreshNormalHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshNormalHeader.m; sourceTree = "<group>"; };
+		4BA14E981CF566080081617C /* MJRefreshStateHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshStateHeader.h; sourceTree = "<group>"; };
+		4BA14E991CF566080081617C /* MJRefreshStateHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshStateHeader.m; sourceTree = "<group>"; };
+		4BA14E9A1CF566080081617C /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		4BA14E9B1CF566080081617C /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		4BA14E9C1CF566080081617C /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		4BA14E9D1CF566080081617C /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
+		4BA14E9E1CF566080081617C /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
+		4BA14E9F1CF566080081617C /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
+		4BA14EA01CF566080081617C /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		4BA14EA11CF566080081617C /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		4BA14EA21CF566080081617C /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
+		4BA14EA31CF566080081617C /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		4BA14EB71CF56E2F0081617C /* Setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Setting.png; sourceTree = "<group>"; };
+		4BA14EB91CF5BB6C0081617C /* WFCityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFCityTableViewController.h; sourceTree = "<group>"; };
+		4BA14EBA1CF5BB6C0081617C /* WFCityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFCityTableViewController.m; sourceTree = "<group>"; };
 		4BC6EB811CED2C8C00E74136 /* weatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC6EB851CED2C8C00E74136 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4BC6EB871CED2C8C00E74136 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +176,35 @@
 		4BC6EBA51CED2C8D00E74136 /* weatherForecastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weatherForecastUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC6EBA91CED2C8D00E74136 /* weatherForecastUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = weatherForecastUITests.m; sourceTree = "<group>"; };
 		4BC6EBAB1CED2C8D00E74136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BC6EBB81CED2CB200E74136 /* WFMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFMainViewController.h; sourceTree = "<group>"; };
+		4BC6EBB91CED2CB200E74136 /* WFMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFMainViewController.m; sourceTree = "<group>"; };
+		4BC6EBBB1CED2DB200E74136 /* NFWeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFWeatherModel.h; sourceTree = "<group>"; };
+		4BC6EBBC1CED2DB200E74136 /* NFWeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFWeatherModel.m; sourceTree = "<group>"; };
+		4BC6EBBE1CED790400E74136 /* WFDaysView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFDaysView.h; sourceTree = "<group>"; };
+		4BC6EBBF1CED790400E74136 /* WFDaysView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFDaysView.m; sourceTree = "<group>"; };
+		4BC6EBC21CEDCD2A00E74136 /* moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moon.png; sourceTree = "<group>"; };
+		4BC6EBC31CEDCD2A00E74136 /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
+		4BC6EBC41CEDCD2A00E74136 /* 雾霾.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "雾霾.png"; sourceTree = "<group>"; };
+		4BC6EBC51CEDCD2A00E74136 /* 刷新.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "刷新.png"; sourceTree = "<group>"; };
+		4BC6EBC61CEDCD2A00E74136 /* 天气－小雨.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "天气－小雨.png"; sourceTree = "<group>"; };
+		4BC6EBC71CEDCD2A00E74136 /* 天气－晴.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "天气－晴.png"; sourceTree = "<group>"; };
+		4BC6EBC81CEDCD2A00E74136 /* 天气－未知.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "天气－未知.png"; sourceTree = "<group>"; };
+		4BC6EBC91CEDCD2A00E74136 /* 天气－雷阵雨.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "天气－雷阵雨.png"; sourceTree = "<group>"; };
+		4BC6EBCA1CEDCD2A00E74136 /* 天气－雾.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "天气－雾.png"; sourceTree = "<group>"; };
+		4BC6EBCB1CEDCD2A00E74136 /* 天气－霾.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "天气－霾.png"; sourceTree = "<group>"; };
+		4BC6EBCC1CEDCD2A00E74136 /* 天气－风.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "天气－风.png"; sourceTree = "<group>"; };
+		4BC6EBCD1CEDCD2A00E74136 /* 温度计.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "温度计.png"; sourceTree = "<group>"; };
+		4BC6EBCE1CEDCD2A00E74136 /* 湿度.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "湿度.png"; sourceTree = "<group>"; };
+		4BC6EBCF1CEDCD2A00E74136 /* 风.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "风.png"; sourceTree = "<group>"; };
+		4BC6EBDE1CEDCD6A00E74136 /* login_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_bg@3x.png"; sourceTree = "<group>"; };
+		595C42931ADA176C4B2E5AEF /* libPods-weatherForecast.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weatherForecast.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D4D766032B0F985DAE30422 /* Pods-weatherForecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherForecast.release.xcconfig"; path = "Pods/Target Support Files/Pods-weatherForecast/Pods-weatherForecast.release.xcconfig"; sourceTree = "<group>"; };
+		9FBC1827A06C9144001F1A26 /* libPods-weatherForecastUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weatherForecastUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6F8F3308FFCAE31DA82A74B /* Pods-weatherForecastUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherForecastUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weatherForecastUITests/Pods-weatherForecastUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F65ADCF1DFAEDAAFFADED1C4 /* Pods-weatherForecastTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherForecastTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-weatherForecastTests/Pods-weatherForecastTests.release.xcconfig"; sourceTree = "<group>"; };
+		F9C58909EECD88368C400760 /* libPods-weatherForecastTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weatherForecastTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAC7DFD60A7DD7466C5E50CC /* Pods-weatherForecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherForecast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weatherForecast/Pods-weatherForecast.debug.xcconfig"; sourceTree = "<group>"; };
+		FBD6FEFECA41C702E0C7A9A0 /* Pods-weatherForecastUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherForecastUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-weatherForecastUITests/Pods-weatherForecastUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FCAE6F4FE83E046DED8C1B5 /* libPods-weatherForecast.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA49E176DBAB395A32556604 /* libPods-weatherForecastTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +228,151 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B50FD9626303FD6ACAF27FF /* libPods-weatherForecastUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B75752D1CF201000060ECD8 /* image+extension */ = {
+			isa = PBXGroup;
+			children = (
+				4B75752E1CF201000060ECD8 /* UIImage+RTTint.h */,
+				4B75752F1CF201000060ECD8 /* UIImage+RTTint.m */,
+			);
+			path = "image+extension";
+			sourceTree = "<group>";
+		};
+		4B8DDB371CF2CAB700913026 /* dataModel */ = {
+			isa = PBXGroup;
+			children = (
+				4B8DDB3F1CF46A9900913026 /* NFCity.h */,
+				4B8DDB401CF46A9900913026 /* NFCity.m */,
+				4BC6EBBB1CED2DB200E74136 /* NFWeatherModel.h */,
+				4BC6EBBC1CED2DB200E74136 /* NFWeatherModel.m */,
+				4B8DDB381CF2CAEE00913026 /* NFCityWeatherModel.h */,
+				4B8DDB391CF2CAEE00913026 /* NFCityWeatherModel.m */,
+				4B8DDB3C1CF468E100913026 /* NFWeatherService.h */,
+				4B8DDB3D1CF468E100913026 /* NFWeatherService.m */,
+			);
+			name = dataModel;
+			sourceTree = "<group>";
+		};
+		4BA14E611CF4BFC80081617C /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				4BA14E621CF4BFC80081617C /* CAShapeLayer+WCPullRefresh.h */,
+				4BA14E631CF4BFC80081617C /* CAShapeLayer+WCPullRefresh.m */,
+				4BA14E641CF4BFC80081617C /* NSDate+WCPullRefresh.h */,
+				4BA14E651CF4BFC80081617C /* NSDate+WCPullRefresh.m */,
+				4BA14E661CF4BFC80081617C /* WCMagicSquareView.h */,
+				4BA14E671CF4BFC80081617C /* WCMagicSquareView.m */,
+				4BA14E681CF4BFC80081617C /* WCProgressItem.h */,
+				4BA14E691CF4BFC80081617C /* WCProgressItem.m */,
+				4BA14E6A1CF4BFC80081617C /* WCPullRefreshControl.h */,
+				4BA14E6B1CF4BFC80081617C /* WCPullRefreshControl.m */,
+				4BA14E6C1CF4BFC80081617C /* WCRefreshingItem.h */,
+				4BA14E6D1CF4BFC80081617C /* WCRefreshingItem.m */,
+				4BA14E741CF4C1B10081617C /* WCGraintCircleLayer.h */,
+				4BA14E751CF4C1B10081617C /* WCGraintCircleLayer.m */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		4BA14E771CF566080081617C /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				4BA14E781CF566080081617C /* Base */,
+				4BA14E831CF566080081617C /* Custom */,
+				4BA14E9A1CF566080081617C /* MJRefresh.bundle */,
+				4BA14E9B1CF566080081617C /* MJRefresh.h */,
+				4BA14E9C1CF566080081617C /* MJRefreshConst.h */,
+				4BA14E9D1CF566080081617C /* MJRefreshConst.m */,
+				4BA14E9E1CF566080081617C /* UIScrollView+MJExtension.h */,
+				4BA14E9F1CF566080081617C /* UIScrollView+MJExtension.m */,
+				4BA14EA01CF566080081617C /* UIScrollView+MJRefresh.h */,
+				4BA14EA11CF566080081617C /* UIScrollView+MJRefresh.m */,
+				4BA14EA21CF566080081617C /* UIView+MJExtension.h */,
+				4BA14EA31CF566080081617C /* UIView+MJExtension.m */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		4BA14E781CF566080081617C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4BA14E791CF566080081617C /* MJRefreshAutoFooter.h */,
+				4BA14E7A1CF566080081617C /* MJRefreshAutoFooter.m */,
+				4BA14E7B1CF566080081617C /* MJRefreshBackFooter.h */,
+				4BA14E7C1CF566080081617C /* MJRefreshBackFooter.m */,
+				4BA14E7D1CF566080081617C /* MJRefreshComponent.h */,
+				4BA14E7E1CF566080081617C /* MJRefreshComponent.m */,
+				4BA14E7F1CF566080081617C /* MJRefreshFooter.h */,
+				4BA14E801CF566080081617C /* MJRefreshFooter.m */,
+				4BA14E811CF566080081617C /* MJRefreshHeader.h */,
+				4BA14E821CF566080081617C /* MJRefreshHeader.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		4BA14E831CF566080081617C /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				4BA14E841CF566080081617C /* Footer */,
+				4BA14E931CF566080081617C /* Header */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		4BA14E841CF566080081617C /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				4BA14E851CF566080081617C /* Auto */,
+				4BA14E8C1CF566080081617C /* Back */,
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
+		4BA14E851CF566080081617C /* Auto */ = {
+			isa = PBXGroup;
+			children = (
+				4BA14E861CF566080081617C /* MJRefreshAutoGifFooter.h */,
+				4BA14E871CF566080081617C /* MJRefreshAutoGifFooter.m */,
+				4BA14E881CF566080081617C /* MJRefreshAutoNormalFooter.h */,
+				4BA14E891CF566080081617C /* MJRefreshAutoNormalFooter.m */,
+				4BA14E8A1CF566080081617C /* MJRefreshAutoStateFooter.h */,
+				4BA14E8B1CF566080081617C /* MJRefreshAutoStateFooter.m */,
+			);
+			path = Auto;
+			sourceTree = "<group>";
+		};
+		4BA14E8C1CF566080081617C /* Back */ = {
+			isa = PBXGroup;
+			children = (
+				4BA14E8D1CF566080081617C /* MJRefreshBackGifFooter.h */,
+				4BA14E8E1CF566080081617C /* MJRefreshBackGifFooter.m */,
+				4BA14E8F1CF566080081617C /* MJRefreshBackNormalFooter.h */,
+				4BA14E901CF566080081617C /* MJRefreshBackNormalFooter.m */,
+				4BA14E911CF566080081617C /* MJRefreshBackStateFooter.h */,
+				4BA14E921CF566080081617C /* MJRefreshBackStateFooter.m */,
+			);
+			path = Back;
+			sourceTree = "<group>";
+		};
+		4BA14E931CF566080081617C /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				4BA14E941CF566080081617C /* MJRefreshGifHeader.h */,
+				4BA14E951CF566080081617C /* MJRefreshGifHeader.m */,
+				4BA14E961CF566080081617C /* MJRefreshNormalHeader.h */,
+				4BA14E971CF566080081617C /* MJRefreshNormalHeader.m */,
+				4BA14E981CF566080081617C /* MJRefreshStateHeader.h */,
+				4BA14E991CF566080081617C /* MJRefreshStateHeader.m */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		4BC6EB781CED2C8C00E74136 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +380,9 @@
 				4BC6EB9D1CED2C8D00E74136 /* weatherForecastTests */,
 				4BC6EBA81CED2C8D00E74136 /* weatherForecastUITests */,
 				4BC6EB821CED2C8C00E74136 /* Products */,
+				4BA14E771CF566080081617C /* MJRefresh */,
+				5A890C579718FAB80BA86DC4 /* Pods */,
+				7C1C105309F29325B7400EEE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +399,8 @@
 		4BC6EB831CED2C8C00E74136 /* weatherForecast */ = {
 			isa = PBXGroup;
 			children = (
+				4B75752D1CF201000060ECD8 /* image+extension */,
+				4BC6EBB71CED2C9A00E74136 /* pic */,
 				4BC6EB871CED2C8C00E74136 /* AppDelegate.h */,
 				4BC6EB881CED2C8C00E74136 /* AppDelegate.m */,
 				4BC6EB8A1CED2C8C00E74136 /* ViewController.h */,
@@ -110,6 +410,18 @@
 				4BC6EB921CED2C8D00E74136 /* LaunchScreen.storyboard */,
 				4BC6EB951CED2C8D00E74136 /* Info.plist */,
 				4BC6EB841CED2C8C00E74136 /* Supporting Files */,
+				4BA14E611CF4BFC80081617C /* classes */,
+				4B8DDB371CF2CAB700913026 /* dataModel */,
+				4BC6EBB81CED2CB200E74136 /* WFMainViewController.h */,
+				4BC6EBB91CED2CB200E74136 /* WFMainViewController.m */,
+				4BC6EBBE1CED790400E74136 /* WFDaysView.h */,
+				4BC6EBBF1CED790400E74136 /* WFDaysView.m */,
+				4B75752A1CF12C930060ECD8 /* NSDate+WFDateExtension.h */,
+				4B75752B1CF12C930060ECD8 /* NSDate+WFDateExtension.m */,
+				4B8DDB421CF49BBE00913026 /* WFMianNavigationController.h */,
+				4B8DDB431CF49BBE00913026 /* WFMianNavigationController.m */,
+				4BA14EB91CF5BB6C0081617C /* WFCityTableViewController.h */,
+				4BA14EBA1CF5BB6C0081617C /* WFCityTableViewController.m */,
 			);
 			path = weatherForecast;
 			sourceTree = "<group>";
@@ -140,6 +452,61 @@
 			path = weatherForecastUITests;
 			sourceTree = "<group>";
 		};
+		4BC6EBB71CED2C9A00E74136 /* pic */ = {
+			isa = PBXGroup;
+			children = (
+				4BC6EBC11CEDCD2A00E74136 /* weather */,
+			);
+			name = pic;
+			sourceTree = "<group>";
+		};
+		4BC6EBC11CEDCD2A00E74136 /* weather */ = {
+			isa = PBXGroup;
+			children = (
+				4B13F2111CEDDE8A003473B1 /* background.jpg */,
+				4BA14EB71CF56E2F0081617C /* Setting.png */,
+				4BC6EBDE1CEDCD6A00E74136 /* login_bg@3x.png */,
+				4BC6EBC21CEDCD2A00E74136 /* moon.png */,
+				4BC6EBC31CEDCD2A00E74136 /* sun.png */,
+				4BC6EBC41CEDCD2A00E74136 /* 雾霾.png */,
+				4BC6EBC51CEDCD2A00E74136 /* 刷新.png */,
+				4BC6EBC61CEDCD2A00E74136 /* 天气－小雨.png */,
+				4BC6EBC71CEDCD2A00E74136 /* 天气－晴.png */,
+				4BC6EBC81CEDCD2A00E74136 /* 天气－未知.png */,
+				4BC6EBC91CEDCD2A00E74136 /* 天气－雷阵雨.png */,
+				4BC6EBCA1CEDCD2A00E74136 /* 天气－雾.png */,
+				4BC6EBCB1CEDCD2A00E74136 /* 天气－霾.png */,
+				4BC6EBCC1CEDCD2A00E74136 /* 天气－风.png */,
+				4BC6EBCD1CEDCD2A00E74136 /* 温度计.png */,
+				4BC6EBCE1CEDCD2A00E74136 /* 湿度.png */,
+				4BC6EBCF1CEDCD2A00E74136 /* 风.png */,
+			);
+			path = weather;
+			sourceTree = "<group>";
+		};
+		5A890C579718FAB80BA86DC4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FAC7DFD60A7DD7466C5E50CC /* Pods-weatherForecast.debug.xcconfig */,
+				5D4D766032B0F985DAE30422 /* Pods-weatherForecast.release.xcconfig */,
+				22609B92077B3B16E385C400 /* Pods-weatherForecastTests.debug.xcconfig */,
+				F65ADCF1DFAEDAAFFADED1C4 /* Pods-weatherForecastTests.release.xcconfig */,
+				A6F8F3308FFCAE31DA82A74B /* Pods-weatherForecastUITests.debug.xcconfig */,
+				FBD6FEFECA41C702E0C7A9A0 /* Pods-weatherForecastUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7C1C105309F29325B7400EEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				595C42931ADA176C4B2E5AEF /* libPods-weatherForecast.a */,
+				F9C58909EECD88368C400760 /* libPods-weatherForecastTests.a */,
+				9FBC1827A06C9144001F1A26 /* libPods-weatherForecastUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +514,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BC6EBAE1CED2C8D00E74136 /* Build configuration list for PBXNativeTarget "weatherForecast" */;
 			buildPhases = (
+				188B4EB708D9355E71DA45FB /* 📦 Check Pods Manifest.lock */,
 				4BC6EB7D1CED2C8C00E74136 /* Sources */,
 				4BC6EB7E1CED2C8C00E74136 /* Frameworks */,
 				4BC6EB7F1CED2C8C00E74136 /* Resources */,
+				55BAF61A007B24C0601E3AF6 /* 📦 Embed Pods Frameworks */,
+				18BC059EEE20A1AF6C5FB4B3 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +534,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BC6EBB11CED2C8D00E74136 /* Build configuration list for PBXNativeTarget "weatherForecastTests" */;
 			buildPhases = (
+				D08634268CCE487BBDE14CEE /* 📦 Check Pods Manifest.lock */,
 				4BC6EB961CED2C8D00E74136 /* Sources */,
 				4BC6EB971CED2C8D00E74136 /* Frameworks */,
 				4BC6EB981CED2C8D00E74136 /* Resources */,
+				56904962BD7230804033B561 /* 📦 Embed Pods Frameworks */,
+				FD1CFB58F68A878E396B3F57 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,9 +555,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BC6EBB41CED2C8D00E74136 /* Build configuration list for PBXNativeTarget "weatherForecastUITests" */;
 			buildPhases = (
+				F075B0A2773AA51C0DF9C50E /* 📦 Check Pods Manifest.lock */,
 				4BC6EBA11CED2C8D00E74136 /* Sources */,
 				4BC6EBA21CED2C8D00E74136 /* Frameworks */,
 				4BC6EBA31CED2C8D00E74136 /* Resources */,
+				F1FC62F25C5C2DE59E920E96 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,9 +621,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC6EBDB1CEDCD2A00E74136 /* 温度计.png in Resources */,
+				4B13F2121CEDDE8A003473B1 /* background.jpg in Resources */,
+				4BC6EBD31CEDCD2A00E74136 /* 刷新.png in Resources */,
+				4BC6EBDF1CEDCD6A00E74136 /* login_bg@3x.png in Resources */,
+				4BC6EBD01CEDCD2A00E74136 /* moon.png in Resources */,
+				4BC6EBD91CEDCD2A00E74136 /* 天气－霾.png in Resources */,
 				4BC6EB941CED2C8D00E74136 /* LaunchScreen.storyboard in Resources */,
+				4BC6EBD21CEDCD2A00E74136 /* 雾霾.png in Resources */,
+				4BC6EBDD1CEDCD2A00E74136 /* 风.png in Resources */,
+				4BC6EBDA1CEDCD2A00E74136 /* 天气－风.png in Resources */,
+				4BC6EBD51CEDCD2A00E74136 /* 天气－晴.png in Resources */,
+				4BC6EBD11CEDCD2A00E74136 /* sun.png in Resources */,
+				4BC6EBD41CEDCD2A00E74136 /* 天气－小雨.png in Resources */,
+				4BC6EBD81CEDCD2A00E74136 /* 天气－雾.png in Resources */,
+				4BC6EBD71CEDCD2A00E74136 /* 天气－雷阵雨.png in Resources */,
 				4BC6EB911CED2C8D00E74136 /* Assets.xcassets in Resources */,
 				4BC6EB8F1CED2C8C00E74136 /* Main.storyboard in Resources */,
+				4BC6EBDC1CEDCD2A00E74136 /* 湿度.png in Resources */,
+				4BA14EB21CF566080081617C /* MJRefresh.bundle in Resources */,
+				4BA14EB81CF56E2F0081617C /* Setting.png in Resources */,
+				4BC6EBD61CEDCD2A00E74136 /* 天气－未知.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,14 +661,172 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		188B4EB708D9355E71DA45FB /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		18BC059EEE20A1AF6C5FB4B3 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-weatherForecast/Pods-weatherForecast-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55BAF61A007B24C0601E3AF6 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-weatherForecast/Pods-weatherForecast-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56904962BD7230804033B561 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-weatherForecastTests/Pods-weatherForecastTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D08634268CCE487BBDE14CEE /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F075B0A2773AA51C0DF9C50E /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F1FC62F25C5C2DE59E920E96 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-weatherForecastUITests/Pods-weatherForecastUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD1CFB58F68A878E396B3F57 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-weatherForecastTests/Pods-weatherForecastTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4BC6EB7D1CED2C8C00E74136 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA14EA51CF566080081617C /* MJRefreshBackFooter.m in Sources */,
+				4BA14EA71CF566080081617C /* MJRefreshFooter.m in Sources */,
 				4BC6EB8C1CED2C8C00E74136 /* ViewController.m in Sources */,
+				4B75752C1CF12C930060ECD8 /* NSDate+WFDateExtension.m in Sources */,
+				4BA14EB31CF566080081617C /* MJRefreshConst.m in Sources */,
+				4B8DDB3E1CF468E100913026 /* NFWeatherService.m in Sources */,
+				4BA14E721CF4BFC80081617C /* WCPullRefreshControl.m in Sources */,
+				4BA14EAF1CF566080081617C /* MJRefreshGifHeader.m in Sources */,
 				4BC6EB891CED2C8C00E74136 /* AppDelegate.m in Sources */,
+				4BA14EB41CF566080081617C /* UIScrollView+MJExtension.m in Sources */,
+				4BA14EAC1CF566080081617C /* MJRefreshBackGifFooter.m in Sources */,
+				4BA14EA91CF566080081617C /* MJRefreshAutoGifFooter.m in Sources */,
+				4BA14EB01CF566080081617C /* MJRefreshNormalHeader.m in Sources */,
+				4BA14EA61CF566080081617C /* MJRefreshComponent.m in Sources */,
+				4BC6EBC01CED790400E74136 /* WFDaysView.m in Sources */,
+				4BA14E6F1CF4BFC80081617C /* NSDate+WCPullRefresh.m in Sources */,
+				4BA14EB61CF566080081617C /* UIView+MJExtension.m in Sources */,
+				4BA14EBB1CF5BB6C0081617C /* WFCityTableViewController.m in Sources */,
+				4B8DDB411CF46A9900913026 /* NFCity.m in Sources */,
+				4BA14E701CF4BFC80081617C /* WCMagicSquareView.m in Sources */,
+				4B7575301CF201000060ECD8 /* UIImage+RTTint.m in Sources */,
+				4BA14EA41CF566080081617C /* MJRefreshAutoFooter.m in Sources */,
+				4BA14E761CF4C1B10081617C /* WCGraintCircleLayer.m in Sources */,
+				4BA14EAD1CF566080081617C /* MJRefreshBackNormalFooter.m in Sources */,
+				4BA14E711CF4BFC80081617C /* WCProgressItem.m in Sources */,
+				4BA14EAB1CF566080081617C /* MJRefreshAutoStateFooter.m in Sources */,
+				4BA14EB11CF566080081617C /* MJRefreshStateHeader.m in Sources */,
+				4BC6EBBA1CED2CB200E74136 /* WFMainViewController.m in Sources */,
+				4BA14E6E1CF4BFC80081617C /* CAShapeLayer+WCPullRefresh.m in Sources */,
+				4BA14EAA1CF566080081617C /* MJRefreshAutoNormalFooter.m in Sources */,
 				4BC6EB861CED2C8C00E74136 /* main.m in Sources */,
+				4BA14EA81CF566080081617C /* MJRefreshHeader.m in Sources */,
+				4B8DDB441CF49BBE00913026 /* WFMianNavigationController.m in Sources */,
+				4BA14EAE1CF566080081617C /* MJRefreshBackStateFooter.m in Sources */,
+				4BA14EB51CF566080081617C /* UIScrollView+MJRefresh.m in Sources */,
+				4BC6EBBD1CED2DB200E74136 /* NFWeatherModel.m in Sources */,
+				4B8DDB3A1CF2CAEE00913026 /* NFCityWeatherModel.m in Sources */,
+				4BA14E731CF4BFC80081617C /* WCRefreshingItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +963,7 @@
 		};
 		4BC6EBAF1CED2C8D00E74136 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAC7DFD60A7DD7466C5E50CC /* Pods-weatherForecast.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = weatherForecast/Info.plist;
@@ -423,6 +975,7 @@
 		};
 		4BC6EBB01CED2C8D00E74136 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D4D766032B0F985DAE30422 /* Pods-weatherForecast.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = weatherForecast/Info.plist;
@@ -434,6 +987,7 @@
 		};
 		4BC6EBB21CED2C8D00E74136 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22609B92077B3B16E385C400 /* Pods-weatherForecastTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = weatherForecastTests/Info.plist;
@@ -446,6 +1000,7 @@
 		};
 		4BC6EBB31CED2C8D00E74136 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F65ADCF1DFAEDAAFFADED1C4 /* Pods-weatherForecastTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = weatherForecastTests/Info.plist;
@@ -458,6 +1013,7 @@
 		};
 		4BC6EBB51CED2C8D00E74136 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6F8F3308FFCAE31DA82A74B /* Pods-weatherForecastUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = weatherForecastUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -470,6 +1026,7 @@
 		};
 		4BC6EBB61CED2C8D00E74136 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBD6FEFECA41C702E0C7A9A0 /* Pods-weatherForecastUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = weatherForecastUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -499,6 +1056,7 @@
 				4BC6EBB01CED2C8D00E74136 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BC6EBB11CED2C8D00E74136 /* Build configuration list for PBXNativeTarget "weatherForecastTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +1065,7 @@
 				4BC6EBB31CED2C8D00E74136 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BC6EBB41CED2C8D00E74136 /* Build configuration list for PBXNativeTarget "weatherForecastUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +1074,7 @@
 				4BC6EBB61CED2C8D00E74136 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

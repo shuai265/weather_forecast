@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "WFMainViewController.h"
+#import "WFMianNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc]init];
+    WFMianNavigationController *navigationController = [[WFMianNavigationController alloc]init];
+    WFMainViewController *main = [[WFMainViewController alloc]init];
+    [navigationController addChildViewController:main];
+    [self.window setRootViewController:navigationController];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

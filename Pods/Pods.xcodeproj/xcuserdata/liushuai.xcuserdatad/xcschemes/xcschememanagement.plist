@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-weatherForecast.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-weatherForecastTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-weatherForecastUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SVPullToRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>A08814FDE6F0F4DA2E6B2751D81B3C68</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A1F016E42E1246ECAB67B1324B1BE670</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D87D0C6E287B532DC57C269758DAF73F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FEAB7BC7CD4E69C23CA0AFD6E5261F7E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
