@@ -47,7 +47,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.weathers.count;
+    return self.cities.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -57,7 +57,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
     }
-    NFCityWeatherModel *cityWeatherModel = [_weathers objectAtIndex:indexPath.row];
+    NFCityWeatherModel *cityWeatherModel = [_cities objectAtIndex:indexPath.row];
     cell.textLabel.text = cityWeatherModel.cityName;
     
     return cell;
@@ -86,7 +86,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [_weathers removeObjectAtIndex:indexPath.row];
+        [_cities removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -124,7 +124,7 @@
 }
 - (void)calcelClick:(UIButton *)button {
     
-    [self.delegate WFCityTableViewController:self didFinishEditingWeathers:_weathers];
+    [self.delegate WFCityTableViewController:self didFinishEditingCities:_cities];
     [self.navigationController popViewControllerAnimated:YES];
 }
 @end

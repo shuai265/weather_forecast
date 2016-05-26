@@ -14,13 +14,6 @@
 		4B8DDB3E1CF468E100913026 /* NFWeatherService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8DDB3D1CF468E100913026 /* NFWeatherService.m */; };
 		4B8DDB411CF46A9900913026 /* NFCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8DDB401CF46A9900913026 /* NFCity.m */; };
 		4B8DDB441CF49BBE00913026 /* WFMianNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8DDB431CF49BBE00913026 /* WFMianNavigationController.m */; };
-		4BA14E6E1CF4BFC80081617C /* CAShapeLayer+WCPullRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E631CF4BFC80081617C /* CAShapeLayer+WCPullRefresh.m */; };
-		4BA14E6F1CF4BFC80081617C /* NSDate+WCPullRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E651CF4BFC80081617C /* NSDate+WCPullRefresh.m */; };
-		4BA14E701CF4BFC80081617C /* WCMagicSquareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E671CF4BFC80081617C /* WCMagicSquareView.m */; };
-		4BA14E711CF4BFC80081617C /* WCProgressItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E691CF4BFC80081617C /* WCProgressItem.m */; };
-		4BA14E721CF4BFC80081617C /* WCPullRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E6B1CF4BFC80081617C /* WCPullRefreshControl.m */; };
-		4BA14E731CF4BFC80081617C /* WCRefreshingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E6D1CF4BFC80081617C /* WCRefreshingItem.m */; };
-		4BA14E761CF4C1B10081617C /* WCGraintCircleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E751CF4C1B10081617C /* WCGraintCircleLayer.m */; };
 		4BA14EA41CF566080081617C /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E7A1CF566080081617C /* MJRefreshAutoFooter.m */; };
 		4BA14EA51CF566080081617C /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E7C1CF566080081617C /* MJRefreshBackFooter.m */; };
 		4BA14EA61CF566080081617C /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14E7E1CF566080081617C /* MJRefreshComponent.m */; };
@@ -42,6 +35,8 @@
 		4BA14EB61CF566080081617C /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14EA31CF566080081617C /* UIView+MJExtension.m */; };
 		4BA14EB81CF56E2F0081617C /* Setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BA14EB71CF56E2F0081617C /* Setting.png */; };
 		4BA14EBB1CF5BB6C0081617C /* WFCityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14EBA1CF5BB6C0081617C /* WFCityTableViewController.m */; };
+		4BA14EBE1CF6037A0081617C /* WFSecondMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14EBD1CF6037A0081617C /* WFSecondMainViewController.m */; };
+		4BA14EC21CF6B4ED0081617C /* WFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14EC11CF6B4ED0081617C /* WFScrollView.m */; };
 		4BC6EB861CED2C8C00E74136 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6EB851CED2C8C00E74136 /* main.m */; };
 		4BC6EB891CED2C8C00E74136 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6EB881CED2C8C00E74136 /* AppDelegate.m */; };
 		4BC6EB8C1CED2C8C00E74136 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6EB8B1CED2C8C00E74136 /* ViewController.m */; };
@@ -105,20 +100,6 @@
 		4B8DDB401CF46A9900913026 /* NFCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFCity.m; sourceTree = "<group>"; };
 		4B8DDB421CF49BBE00913026 /* WFMianNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFMianNavigationController.h; sourceTree = "<group>"; };
 		4B8DDB431CF49BBE00913026 /* WFMianNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFMianNavigationController.m; sourceTree = "<group>"; };
-		4BA14E621CF4BFC80081617C /* CAShapeLayer+WCPullRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+WCPullRefresh.h"; sourceTree = "<group>"; };
-		4BA14E631CF4BFC80081617C /* CAShapeLayer+WCPullRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+WCPullRefresh.m"; sourceTree = "<group>"; };
-		4BA14E641CF4BFC80081617C /* NSDate+WCPullRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WCPullRefresh.h"; sourceTree = "<group>"; };
-		4BA14E651CF4BFC80081617C /* NSDate+WCPullRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WCPullRefresh.m"; sourceTree = "<group>"; };
-		4BA14E661CF4BFC80081617C /* WCMagicSquareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCMagicSquareView.h; sourceTree = "<group>"; };
-		4BA14E671CF4BFC80081617C /* WCMagicSquareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCMagicSquareView.m; sourceTree = "<group>"; };
-		4BA14E681CF4BFC80081617C /* WCProgressItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCProgressItem.h; sourceTree = "<group>"; };
-		4BA14E691CF4BFC80081617C /* WCProgressItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCProgressItem.m; sourceTree = "<group>"; };
-		4BA14E6A1CF4BFC80081617C /* WCPullRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCPullRefreshControl.h; sourceTree = "<group>"; };
-		4BA14E6B1CF4BFC80081617C /* WCPullRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCPullRefreshControl.m; sourceTree = "<group>"; };
-		4BA14E6C1CF4BFC80081617C /* WCRefreshingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCRefreshingItem.h; sourceTree = "<group>"; };
-		4BA14E6D1CF4BFC80081617C /* WCRefreshingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCRefreshingItem.m; sourceTree = "<group>"; };
-		4BA14E741CF4C1B10081617C /* WCGraintCircleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGraintCircleLayer.h; sourceTree = "<group>"; };
-		4BA14E751CF4C1B10081617C /* WCGraintCircleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGraintCircleLayer.m; sourceTree = "<group>"; };
 		4BA14E791CF566080081617C /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		4BA14E7A1CF566080081617C /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		4BA14E7B1CF566080081617C /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -160,6 +141,10 @@
 		4BA14EB71CF56E2F0081617C /* Setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Setting.png; sourceTree = "<group>"; };
 		4BA14EB91CF5BB6C0081617C /* WFCityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFCityTableViewController.h; sourceTree = "<group>"; };
 		4BA14EBA1CF5BB6C0081617C /* WFCityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFCityTableViewController.m; sourceTree = "<group>"; };
+		4BA14EBC1CF6037A0081617C /* WFSecondMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFSecondMainViewController.h; sourceTree = "<group>"; };
+		4BA14EBD1CF6037A0081617C /* WFSecondMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFSecondMainViewController.m; sourceTree = "<group>"; };
+		4BA14EC01CF6B4ED0081617C /* WFScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFScrollView.h; sourceTree = "<group>"; };
+		4BA14EC11CF6B4ED0081617C /* WFScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFScrollView.m; sourceTree = "<group>"; };
 		4BC6EB811CED2C8C00E74136 /* weatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC6EB851CED2C8C00E74136 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4BC6EB871CED2C8C00E74136 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -259,27 +244,6 @@
 			name = dataModel;
 			sourceTree = "<group>";
 		};
-		4BA14E611CF4BFC80081617C /* classes */ = {
-			isa = PBXGroup;
-			children = (
-				4BA14E621CF4BFC80081617C /* CAShapeLayer+WCPullRefresh.h */,
-				4BA14E631CF4BFC80081617C /* CAShapeLayer+WCPullRefresh.m */,
-				4BA14E641CF4BFC80081617C /* NSDate+WCPullRefresh.h */,
-				4BA14E651CF4BFC80081617C /* NSDate+WCPullRefresh.m */,
-				4BA14E661CF4BFC80081617C /* WCMagicSquareView.h */,
-				4BA14E671CF4BFC80081617C /* WCMagicSquareView.m */,
-				4BA14E681CF4BFC80081617C /* WCProgressItem.h */,
-				4BA14E691CF4BFC80081617C /* WCProgressItem.m */,
-				4BA14E6A1CF4BFC80081617C /* WCPullRefreshControl.h */,
-				4BA14E6B1CF4BFC80081617C /* WCPullRefreshControl.m */,
-				4BA14E6C1CF4BFC80081617C /* WCRefreshingItem.h */,
-				4BA14E6D1CF4BFC80081617C /* WCRefreshingItem.m */,
-				4BA14E741CF4C1B10081617C /* WCGraintCircleLayer.h */,
-				4BA14E751CF4C1B10081617C /* WCGraintCircleLayer.m */,
-			);
-			path = classes;
-			sourceTree = "<group>";
-		};
 		4BA14E771CF566080081617C /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +337,17 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		4BA14EBF1CF6B4BB0081617C /* SecondVer */ = {
+			isa = PBXGroup;
+			children = (
+				4BA14EBC1CF6037A0081617C /* WFSecondMainViewController.h */,
+				4BA14EBD1CF6037A0081617C /* WFSecondMainViewController.m */,
+				4BA14EC01CF6B4ED0081617C /* WFScrollView.h */,
+				4BA14EC11CF6B4ED0081617C /* WFScrollView.m */,
+			);
+			name = SecondVer;
+			sourceTree = "<group>";
+		};
 		4BC6EB781CED2C8C00E74136 = {
 			isa = PBXGroup;
 			children = (
@@ -410,7 +385,6 @@
 				4BC6EB921CED2C8D00E74136 /* LaunchScreen.storyboard */,
 				4BC6EB951CED2C8D00E74136 /* Info.plist */,
 				4BC6EB841CED2C8C00E74136 /* Supporting Files */,
-				4BA14E611CF4BFC80081617C /* classes */,
 				4B8DDB371CF2CAB700913026 /* dataModel */,
 				4BC6EBB81CED2CB200E74136 /* WFMainViewController.h */,
 				4BC6EBB91CED2CB200E74136 /* WFMainViewController.m */,
@@ -422,6 +396,7 @@
 				4B8DDB431CF49BBE00913026 /* WFMianNavigationController.m */,
 				4BA14EB91CF5BB6C0081617C /* WFCityTableViewController.h */,
 				4BA14EBA1CF5BB6C0081617C /* WFCityTableViewController.m */,
+				4BA14EBF1CF6B4BB0081617C /* SecondVer */,
 			);
 			path = weatherForecast;
 			sourceTree = "<group>";
@@ -795,29 +770,25 @@
 				4B75752C1CF12C930060ECD8 /* NSDate+WFDateExtension.m in Sources */,
 				4BA14EB31CF566080081617C /* MJRefreshConst.m in Sources */,
 				4B8DDB3E1CF468E100913026 /* NFWeatherService.m in Sources */,
-				4BA14E721CF4BFC80081617C /* WCPullRefreshControl.m in Sources */,
 				4BA14EAF1CF566080081617C /* MJRefreshGifHeader.m in Sources */,
 				4BC6EB891CED2C8C00E74136 /* AppDelegate.m in Sources */,
 				4BA14EB41CF566080081617C /* UIScrollView+MJExtension.m in Sources */,
+				4BA14EC21CF6B4ED0081617C /* WFScrollView.m in Sources */,
 				4BA14EAC1CF566080081617C /* MJRefreshBackGifFooter.m in Sources */,
 				4BA14EA91CF566080081617C /* MJRefreshAutoGifFooter.m in Sources */,
 				4BA14EB01CF566080081617C /* MJRefreshNormalHeader.m in Sources */,
 				4BA14EA61CF566080081617C /* MJRefreshComponent.m in Sources */,
 				4BC6EBC01CED790400E74136 /* WFDaysView.m in Sources */,
-				4BA14E6F1CF4BFC80081617C /* NSDate+WCPullRefresh.m in Sources */,
 				4BA14EB61CF566080081617C /* UIView+MJExtension.m in Sources */,
 				4BA14EBB1CF5BB6C0081617C /* WFCityTableViewController.m in Sources */,
 				4B8DDB411CF46A9900913026 /* NFCity.m in Sources */,
-				4BA14E701CF4BFC80081617C /* WCMagicSquareView.m in Sources */,
 				4B7575301CF201000060ECD8 /* UIImage+RTTint.m in Sources */,
 				4BA14EA41CF566080081617C /* MJRefreshAutoFooter.m in Sources */,
-				4BA14E761CF4C1B10081617C /* WCGraintCircleLayer.m in Sources */,
+				4BA14EBE1CF6037A0081617C /* WFSecondMainViewController.m in Sources */,
 				4BA14EAD1CF566080081617C /* MJRefreshBackNormalFooter.m in Sources */,
-				4BA14E711CF4BFC80081617C /* WCProgressItem.m in Sources */,
 				4BA14EAB1CF566080081617C /* MJRefreshAutoStateFooter.m in Sources */,
 				4BA14EB11CF566080081617C /* MJRefreshStateHeader.m in Sources */,
 				4BC6EBBA1CED2CB200E74136 /* WFMainViewController.m in Sources */,
-				4BA14E6E1CF4BFC80081617C /* CAShapeLayer+WCPullRefresh.m in Sources */,
 				4BA14EAA1CF566080081617C /* MJRefreshAutoNormalFooter.m in Sources */,
 				4BC6EB861CED2C8C00E74136 /* main.m in Sources */,
 				4BA14EA81CF566080081617C /* MJRefreshHeader.m in Sources */,
@@ -826,7 +797,6 @@
 				4BA14EB51CF566080081617C /* UIScrollView+MJRefresh.m in Sources */,
 				4BC6EBBD1CED2DB200E74136 /* NFWeatherModel.m in Sources */,
 				4B8DDB3A1CF2CAEE00913026 /* NFCityWeatherModel.m in Sources */,
-				4BA14E731CF4BFC80081617C /* WCRefreshingItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

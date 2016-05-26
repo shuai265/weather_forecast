@@ -12,13 +12,13 @@
 
 @protocol  WFCityTableViewControllerDelegate <NSObject>
 
-- (void)WFCityTableViewController:(WFCityTableViewController *)viewController didFinishEditingWeathers:(NSArray *)weathers;
+- (void)WFCityTableViewController:(WFCityTableViewController *)viewController didFinishEditingCities:(NSMutableArray *)cities;
 
 @end
 
 @interface WFCityTableViewController : UITableViewController
 
-@property (nonatomic,strong) NSMutableArray *weathers;
+@property (nonatomic,strong) NSMutableArray *cities;//城市名
 @property (nonatomic,strong) id<WFCityTableViewControllerDelegate> delegate;
 
 @end

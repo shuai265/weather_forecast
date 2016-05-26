@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "WFMainViewController.h"
 #import "WFMianNavigationController.h"
+#import "WFSecondMainViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +23,7 @@
     
     self.window = [[UIWindow alloc]init];
     WFMianNavigationController *navigationController = [[WFMianNavigationController alloc]init];
-    WFMainViewController *main = [[WFMainViewController alloc]init];
+    WFSecondMainViewController *main = [[WFSecondMainViewController alloc]init];
     [navigationController addChildViewController:main];
     [self.window setRootViewController:navigationController];
     [self.window makeKeyAndVisible];

@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class NFWeatherModel;
+
 @interface NFCityWeatherModel : NSObject<NSCoding>
 
 @property (nonatomic,copy) NSString *cityName;
 @property (nonatomic,strong) NSArray *weathers; //存放weather对象
 @property (nonatomic,strong) NSDate *lastDate;//上次刷新时间
+@property (nonatomic,strong) NFWeatherModel *currentWeather;//实时天气
 
 @end
