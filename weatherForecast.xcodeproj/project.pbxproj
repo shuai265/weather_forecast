@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4B13F2121CEDDE8A003473B1 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B13F2111CEDDE8A003473B1 /* background.jpg */; };
+		4B682C891CF806FB00EF56F8 /* WFSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B682C871CF806FB00EF56F8 /* WFSearchViewController.m */; };
+		4B682C8A1CF806FB00EF56F8 /* WFSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B682C881CF806FB00EF56F8 /* WFSearchViewController.xib */; };
+		4B682C8D1CF8184E00EF56F8 /* WFSearchCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B682C8C1CF8184E00EF56F8 /* WFSearchCity.m */; };
 		4B75752C1CF12C930060ECD8 /* NSDate+WFDateExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B75752B1CF12C930060ECD8 /* NSDate+WFDateExtension.m */; };
 		4B7575301CF201000060ECD8 /* UIImage+RTTint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B75752F1CF201000060ECD8 /* UIImage+RTTint.m */; };
 		4B8DDB3A1CF2CAEE00913026 /* NFCityWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8DDB391CF2CAEE00913026 /* NFCityWeatherModel.m */; };
@@ -34,7 +37,7 @@
 		4BA14EB51CF566080081617C /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14EA11CF566080081617C /* UIScrollView+MJRefresh.m */; };
 		4BA14EB61CF566080081617C /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14EA31CF566080081617C /* UIView+MJExtension.m */; };
 		4BA14EB81CF56E2F0081617C /* Setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BA14EB71CF56E2F0081617C /* Setting.png */; };
-		4BA14EBB1CF5BB6C0081617C /* WFCityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14EBA1CF5BB6C0081617C /* WFCityTableViewController.m */; };
+		4BA14EBB1CF5BB6C0081617C /* WFCityManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14EBA1CF5BB6C0081617C /* WFCityManageViewController.m */; };
 		4BA14EBE1CF6037A0081617C /* WFSecondMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14EBD1CF6037A0081617C /* WFSecondMainViewController.m */; };
 		4BA14EC21CF6B4ED0081617C /* WFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA14EC11CF6B4ED0081617C /* WFScrollView.m */; };
 		4BC6EB861CED2C8C00E74136 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6EB851CED2C8C00E74136 /* main.m */; };
@@ -88,6 +91,11 @@
 /* Begin PBXFileReference section */
 		22609B92077B3B16E385C400 /* Pods-weatherForecastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherForecastTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weatherForecastTests/Pods-weatherForecastTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4B13F2111CEDDE8A003473B1 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		4B682C861CF806FB00EF56F8 /* WFSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFSearchViewController.h; sourceTree = "<group>"; };
+		4B682C871CF806FB00EF56F8 /* WFSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFSearchViewController.m; sourceTree = "<group>"; };
+		4B682C881CF806FB00EF56F8 /* WFSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WFSearchViewController.xib; sourceTree = "<group>"; };
+		4B682C8B1CF8184E00EF56F8 /* WFSearchCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFSearchCity.h; sourceTree = "<group>"; };
+		4B682C8C1CF8184E00EF56F8 /* WFSearchCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFSearchCity.m; sourceTree = "<group>"; };
 		4B75752A1CF12C930060ECD8 /* NSDate+WFDateExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WFDateExtension.h"; sourceTree = "<group>"; };
 		4B75752B1CF12C930060ECD8 /* NSDate+WFDateExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WFDateExtension.m"; sourceTree = "<group>"; };
 		4B75752E1CF201000060ECD8 /* UIImage+RTTint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RTTint.h"; sourceTree = "<group>"; };
@@ -139,8 +147,8 @@
 		4BA14EA21CF566080081617C /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		4BA14EA31CF566080081617C /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		4BA14EB71CF56E2F0081617C /* Setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Setting.png; sourceTree = "<group>"; };
-		4BA14EB91CF5BB6C0081617C /* WFCityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFCityTableViewController.h; sourceTree = "<group>"; };
-		4BA14EBA1CF5BB6C0081617C /* WFCityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFCityTableViewController.m; sourceTree = "<group>"; };
+		4BA14EB91CF5BB6C0081617C /* WFCityManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFCityManageViewController.h; sourceTree = "<group>"; };
+		4BA14EBA1CF5BB6C0081617C /* WFCityManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFCityManageViewController.m; sourceTree = "<group>"; };
 		4BA14EBC1CF6037A0081617C /* WFSecondMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFSecondMainViewController.h; sourceTree = "<group>"; };
 		4BA14EBD1CF6037A0081617C /* WFSecondMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFSecondMainViewController.m; sourceTree = "<group>"; };
 		4BA14EC01CF6B4ED0081617C /* WFScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFScrollView.h; sourceTree = "<group>"; };
@@ -220,6 +228,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B682C911CF9371B00EF56F8 /* CitySearch */ = {
+			isa = PBXGroup;
+			children = (
+				4B682C861CF806FB00EF56F8 /* WFSearchViewController.h */,
+				4B682C871CF806FB00EF56F8 /* WFSearchViewController.m */,
+				4B682C881CF806FB00EF56F8 /* WFSearchViewController.xib */,
+				4B682C8B1CF8184E00EF56F8 /* WFSearchCity.h */,
+				4B682C8C1CF8184E00EF56F8 /* WFSearchCity.m */,
+			);
+			name = CitySearch;
+			sourceTree = "<group>";
+		};
+		4B682C921CF9ECB000EF56F8 /* FirsttVer */ = {
+			isa = PBXGroup;
+			children = (
+				4BC6EBB81CED2CB200E74136 /* WFMainViewController.h */,
+				4BC6EBB91CED2CB200E74136 /* WFMainViewController.m */,
+			);
+			name = FirsttVer;
+			sourceTree = "<group>";
+		};
+		4B682C931CF9ECFA00EF56F8 /* CityManager */ = {
+			isa = PBXGroup;
+			children = (
+				4BA14EB91CF5BB6C0081617C /* WFCityManageViewController.h */,
+				4BA14EBA1CF5BB6C0081617C /* WFCityManageViewController.m */,
+			);
+			name = CityManager;
+			sourceTree = "<group>";
+		};
 		4B75752D1CF201000060ECD8 /* image+extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,7 +267,7 @@
 			path = "image+extension";
 			sourceTree = "<group>";
 		};
-		4B8DDB371CF2CAB700913026 /* dataModel */ = {
+		4B8DDB371CF2CAB700913026 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				4B8DDB3F1CF46A9900913026 /* NFCity.h */,
@@ -241,7 +279,7 @@
 				4B8DDB3C1CF468E100913026 /* NFWeatherService.h */,
 				4B8DDB3D1CF468E100913026 /* NFWeatherService.m */,
 			);
-			name = dataModel;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		4BA14E771CF566080081617C /* MJRefresh */ = {
@@ -340,10 +378,16 @@
 		4BA14EBF1CF6B4BB0081617C /* SecondVer */ = {
 			isa = PBXGroup;
 			children = (
+				4B8DDB421CF49BBE00913026 /* WFMianNavigationController.h */,
+				4B8DDB431CF49BBE00913026 /* WFMianNavigationController.m */,
 				4BA14EBC1CF6037A0081617C /* WFSecondMainViewController.h */,
 				4BA14EBD1CF6037A0081617C /* WFSecondMainViewController.m */,
 				4BA14EC01CF6B4ED0081617C /* WFScrollView.h */,
 				4BA14EC11CF6B4ED0081617C /* WFScrollView.m */,
+				4BC6EBBE1CED790400E74136 /* WFDaysView.h */,
+				4BC6EBBF1CED790400E74136 /* WFDaysView.m */,
+				4B75752A1CF12C930060ECD8 /* NSDate+WFDateExtension.h */,
+				4B75752B1CF12C930060ECD8 /* NSDate+WFDateExtension.m */,
 			);
 			name = SecondVer;
 			sourceTree = "<group>";
@@ -374,8 +418,13 @@
 		4BC6EB831CED2C8C00E74136 /* weatherForecast */ = {
 			isa = PBXGroup;
 			children = (
+				4B682C921CF9ECB000EF56F8 /* FirsttVer */,
+				4BA14EBF1CF6B4BB0081617C /* SecondVer */,
+				4B682C931CF9ECFA00EF56F8 /* CityManager */,
+				4B682C911CF9371B00EF56F8 /* CitySearch */,
 				4B75752D1CF201000060ECD8 /* image+extension */,
 				4BC6EBB71CED2C9A00E74136 /* pic */,
+				4B8DDB371CF2CAB700913026 /* Model */,
 				4BC6EB871CED2C8C00E74136 /* AppDelegate.h */,
 				4BC6EB881CED2C8C00E74136 /* AppDelegate.m */,
 				4BC6EB8A1CED2C8C00E74136 /* ViewController.h */,
@@ -385,18 +434,6 @@
 				4BC6EB921CED2C8D00E74136 /* LaunchScreen.storyboard */,
 				4BC6EB951CED2C8D00E74136 /* Info.plist */,
 				4BC6EB841CED2C8C00E74136 /* Supporting Files */,
-				4B8DDB371CF2CAB700913026 /* dataModel */,
-				4BC6EBB81CED2CB200E74136 /* WFMainViewController.h */,
-				4BC6EBB91CED2CB200E74136 /* WFMainViewController.m */,
-				4BC6EBBE1CED790400E74136 /* WFDaysView.h */,
-				4BC6EBBF1CED790400E74136 /* WFDaysView.m */,
-				4B75752A1CF12C930060ECD8 /* NSDate+WFDateExtension.h */,
-				4B75752B1CF12C930060ECD8 /* NSDate+WFDateExtension.m */,
-				4B8DDB421CF49BBE00913026 /* WFMianNavigationController.h */,
-				4B8DDB431CF49BBE00913026 /* WFMianNavigationController.m */,
-				4BA14EB91CF5BB6C0081617C /* WFCityTableViewController.h */,
-				4BA14EBA1CF5BB6C0081617C /* WFCityTableViewController.m */,
-				4BA14EBF1CF6B4BB0081617C /* SecondVer */,
 			);
 			path = weatherForecast;
 			sourceTree = "<group>";
@@ -605,6 +642,7 @@
 				4BC6EB941CED2C8D00E74136 /* LaunchScreen.storyboard in Resources */,
 				4BC6EBD21CEDCD2A00E74136 /* 雾霾.png in Resources */,
 				4BC6EBDD1CEDCD2A00E74136 /* 风.png in Resources */,
+				4B682C8A1CF806FB00EF56F8 /* WFSearchViewController.xib in Resources */,
 				4BC6EBDA1CEDCD2A00E74136 /* 天气－风.png in Resources */,
 				4BC6EBD51CEDCD2A00E74136 /* 天气－晴.png in Resources */,
 				4BC6EBD11CEDCD2A00E74136 /* sun.png in Resources */,
@@ -775,12 +813,14 @@
 				4BA14EB41CF566080081617C /* UIScrollView+MJExtension.m in Sources */,
 				4BA14EC21CF6B4ED0081617C /* WFScrollView.m in Sources */,
 				4BA14EAC1CF566080081617C /* MJRefreshBackGifFooter.m in Sources */,
+				4B682C891CF806FB00EF56F8 /* WFSearchViewController.m in Sources */,
+				4B682C8D1CF8184E00EF56F8 /* WFSearchCity.m in Sources */,
 				4BA14EA91CF566080081617C /* MJRefreshAutoGifFooter.m in Sources */,
 				4BA14EB01CF566080081617C /* MJRefreshNormalHeader.m in Sources */,
 				4BA14EA61CF566080081617C /* MJRefreshComponent.m in Sources */,
 				4BC6EBC01CED790400E74136 /* WFDaysView.m in Sources */,
 				4BA14EB61CF566080081617C /* UIView+MJExtension.m in Sources */,
-				4BA14EBB1CF5BB6C0081617C /* WFCityTableViewController.m in Sources */,
+				4BA14EBB1CF5BB6C0081617C /* WFCityManageViewController.m in Sources */,
 				4B8DDB411CF46A9900913026 /* NFCity.m in Sources */,
 				4B7575301CF201000060ECD8 /* UIImage+RTTint.m in Sources */,
 				4BA14EA41CF566080081617C /* MJRefreshAutoFooter.m in Sources */,

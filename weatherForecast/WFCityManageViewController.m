@@ -6,17 +6,19 @@
 //  Copyright © 2016 刘帅. All rights reserved.
 //
 
-#import "WFCityTableViewController.h"
+#import "WFCityManageViewController.h"
 #import "NFCityWeatherModel.h"
-@interface WFCityTableViewController ()
+#import "WFSearchViewController.h"
+@interface WFCityManageViewController ()<WFSearchViewControllerDelegate,UINavigationControllerDelegate>
 
 @end
 
-@implementation WFCityTableViewController
+@implementation WFCityManageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    self.navigationController.delegate = self;
 //    [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:1];
 
     self.navigationItem.title = @"城市管理";
@@ -63,24 +65,7 @@
     return cell;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
+#pragma mark - table View delegate
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -94,37 +79,26 @@
 }
 
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark 添加城市
 - (void)addCityClick:(UIButton *)button {
     NSLog(@"addCityClick");
+    WFSearchViewController *searchVC = [[WFSearchViewController alloc]init];
+    searchVC.delegate = self;
+    [self.navigationController pushViewController:searchVC animated:YES];
 }
 - (void)calcelClick:(UIButton *)button {
     
     [self.delegate WFCityTableViewController:self didFinishEditingCities:_cities];
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+#pragma mark WFSearchViewControllerDelegate
+- (void)WFSearchViewController:(WFSearchViewController *)viewController SelectedCity:(NFCityWeatherModel *)city {
+    [self.navigationController popViewControllerAnimated:viewController];
+    [self.cities addObject:city];
+    NSLog(@"self.cities.count = '%lu'",(unsigned long)self.cities.count);
+    [self.tableView reloadData];
+}
+
 @end

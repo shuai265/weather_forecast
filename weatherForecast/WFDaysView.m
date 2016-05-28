@@ -38,13 +38,29 @@
 
 - (void)drawRect:(CGRect)rect {
     
-//    self.tintColor = [UIColor whiteColor];
-//    [self initData];
+    for (UIView *v in self.subviews) {
+        [v removeFromSuperview];
+    }
+    
+    //取得图形上下文
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    //6.2画分割线
+    CGMutablePathRef path3 = CGPathCreateMutable();
+    CGPathMoveToPoint(path3, nil, 0, 1);
+    CGPathAddLineToPoint(path3, nil,self.frame.size.width,1);
+    
+    CGContextAddPath(context, path3);
+    
+    CGContextSetLineWidth(context, 1.0f);
+    CGContextSetRGBStrokeColor(context, 1, 1, 1, 0.3);    //设置笔触颜色
+    CGContextDrawPath(context, kCGPathStroke);
+    CGPathRelease(path3);
+
     
     if (self.weathersToCalc != nil) {
         self.weathers = self.weathersToCalc;
         //取得图形上下文
-        CGContextRef context = UIGraphicsGetCurrentContext();
+//        CGContextRef context = UIGraphicsGetCurrentContext();
         
         //获取高温点高度
         self.highPoint = [self getHighPoint];
@@ -102,17 +118,7 @@
         CGPathRelease(path);
         CGPathRelease(path2);
         
-        //6.2画分割线
-        CGMutablePathRef path3 = CGPathCreateMutable();
-        CGPathMoveToPoint(path3, nil, 0, 1);
-        CGPathAddLineToPoint(path3, nil,self.frame.size.width,1);
         
-        CGContextAddPath(context, path3);
-        
-        CGContextSetLineWidth(context, 1.0f);
-        CGContextSetRGBStrokeColor(context, 1, 1, 1, 0.3);    //设置笔触颜色
-        CGContextDrawPath(context, kCGPathStroke);
-        CGPathRelease(path3);
         
         //7.加载其他view
         [self setLayout];

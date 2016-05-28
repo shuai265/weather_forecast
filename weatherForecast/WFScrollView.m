@@ -11,7 +11,7 @@
 #import "NFWeatherModel.h"
 #import "UIImage+RTTint.h"
 #import "NFCityWeatherModel.h"
-#import "WFCityTableViewController.h"
+#import "WFCityManageViewController.h"
 
 #define SCREEN self.view.frame.size
 

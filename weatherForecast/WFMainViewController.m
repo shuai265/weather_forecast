@@ -12,7 +12,7 @@
 #import "UIImage+RTTint.h"
 #import "NFCityWeatherModel.h"
 #import "MJRefresh.h"
-#import "WFCityTableViewController.h"
+#import "WFCityManageViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
 #define SCREEN self.view.frame.size
@@ -26,7 +26,7 @@
 // iPhone6p
 #define iPhone6p ([UIScreen mainScreen].bounds.size.height == 736.0)
 
-@interface WFMainViewController ()<UIScrollViewDelegate,CLLocationManagerDelegate,UINavigationControllerDelegate,WFCityTableViewControllerDelegate>
+@interface WFMainViewController ()<UIScrollViewDelegate,CLLocationManagerDelegate,UINavigationControllerDelegate,WFCityManageViewControllerDelegate>
 
 //数据
 @property (nonatomic,strong) NFCityWeatherModel *currentCityWeather;
@@ -857,7 +857,7 @@
 #pragma mark 管理城市 按钮动作
 - (void)cityManageClick:(UIButton *)button {
     NSLog(@"<cityManageClick:>manageButtonclick");
-    WFCityTableViewController *cityTableViewController = [[WFCityTableViewController alloc]init];
+    WFCityManageViewController *cityTableViewController = [[WFCityManageViewController alloc]init];
     cityTableViewController.cities = _weathers;//cityTableViewController 中改变了属性的名称
     [self.navigationController pushViewController:cityTableViewController animated:YES];
 }
@@ -920,7 +920,7 @@
 }
 
 #pragma mark 城市管理 CityManage Delegate 方法
-- (void)WFCityTableViewController:(WFCityTableViewController *)viewController didFinishEditingWeathers:(NSMutableArray *)weathers {
+- (void)WFCityTableViewController:(WFCityManageViewController *)viewController didFinishEditingWeathers:(NSMutableArray *)weathers {
     self.weathers = weathers;
 //    [self updateView];
 //    [self initLayout];
