@@ -13,7 +13,7 @@
 @protocol  WFCityManageViewControllerDelegate <NSObject>
 
 - (void)WFCityTableViewController:(WFCityManageViewController *)viewController didFinishEditingCities:(NSMutableArray *)cities;
-
+- (void)WFCityTableViewController:(WFCityManageViewController *)viewController didSelectedRowAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @interface WFCityManageViewController : UITableViewController

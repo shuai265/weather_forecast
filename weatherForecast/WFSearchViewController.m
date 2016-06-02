@@ -17,7 +17,7 @@ static NSString * const NothingFoundCellIdentifier = @"NothingFoundCell";
 @interface WFSearchViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 @property (nonatomic,weak) IBOutlet UISearchBar *searchBar;
 @property (nonatomic,weak) IBOutlet UITableView *tableView;
-
+@property (nonatomic,strong) NSArray *searchResult;
 @end
 
 @implementation WFSearchViewController {
@@ -30,21 +30,31 @@ static NSString * const NothingFoundCellIdentifier = @"NothingFoundCell";
     
     self.view.backgroundColor = [UIColor whiteColor];
 
-    self.searchBar.backgroundColor = [UIColor clearColor];
+//    self.searchBar.backgroundColor = [UIColor clearColor];
     
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     self.tableView.rowHeight = 44;
     
-    /*
+    if (_searchText) {
+        NSString *searchCity = [[NSString alloc]init];
+        if (_searchText.length>2) {
+            searchCity = [_searchText substringToIndex:2];
+        }else {
+            searchCity = _searchText;
+        }
+        NSLog(@"searchCity = %@",searchCity);
+        [self performSearchWithCityName:searchCity];
+    }
+    
     UINib *cellNib = [UINib nibWithNibName:LoadingCellIdentifier bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:LoadingCellIdentifier];
     
     cellNib = [UINib nibWithNibName:NothingFoundCellIdentifier bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:NothingFoundCellIdentifier];
-     */
+    
     
     if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
-        [self.searchBar becomeFirstResponder];
+//        [self.searchBar becomeFirstResponder];
     }
     
     _statusBarStyle = UIStatusBarStyleLightContent;
@@ -66,9 +76,9 @@ static NSString * const NothingFoundCellIdentifier = @"NothingFoundCell";
     if (_search == nil) {
         return 0;//not searched yet
     } else if(_search.isLoading) {
-        return 1;
+        return 1;//loading
     } else if(_search.searchResult.count == 0) {
-        return 1;
+        return 1;//nothing found
     } else {
         return [_search.searchResult count];
     }
@@ -77,12 +87,18 @@ static NSString * const NothingFoundCellIdentifier = @"NothingFoundCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc]init];
     if (_search.isLoading) {
-        cell.textLabel.text = @"正在搜索";
+//        cell.textLabel.text = @"正在搜索";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:LoadingCellIdentifier forIndexPath:indexPath];
+        UIActivityIndicatorView *spinner = (UIActivityIndicatorView *)[cell viewWithTag:100];
+        [spinner startAnimating];
+
+        return cell;
+        
     } else if([_search.searchResult count] == 0) {
-        cell.textLabel.text = @"无结果，请检查输入是否正确";
+        return [tableView dequeueReusableCellWithIdentifier:NothingFoundCellIdentifier forIndexPath:indexPath];
     } else {
         NFCityWeatherModel *city = _search.searchResult[indexPath.row];
-        cell.textLabel.text = [NSString stringWithFormat:@"%@ %@ %@",city.province_cn,city.district_cn,city.name_cn];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@省 %@市 %@",city.province_cn,city.district_cn,city.name_cn];
         
     }
     return cell;
@@ -92,8 +108,16 @@ static NSString * const NothingFoundCellIdentifier = @"NothingFoundCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.searchBar resignFirstResponder];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NFCityWeatherModel *city = _search.searchResult[indexPath.row];
+    NFCityWeatherModel *city = (NFCityWeatherModel *)_search.searchResult[indexPath.row];
+//    city.cityName = self.searchText;    //需要改一下天气搜索
     [self.delegate WFSearchViewController:self SelectedCity:city];
+    NSLog(@"city 省市区 = '%@ %@ %@'",city.province_cn,city.district_cn,city.name_cn);
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *cityData = [NSKeyedArchiver archivedDataWithRootObject:city];
+    [defaults setObject:cityData forKey:@"addCity"];
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -118,7 +142,24 @@ static NSString * const NothingFoundCellIdentifier = @"NothingFoundCell";
 - (void)performSearch {
     _search = [[WFSearchCity alloc]init];
     
-    [_search performSearchForText:self.searchBar.text completion:^(BOOL success) {
+    [_search performSearchForText:self.searchBar.text completion:^(BOOL success,NSArray *searchResult) {
+        if (!success) {
+            [self showNetWorkError];
+        }
+        
+        self.searchResult = searchResult;
+        [self.tableView reloadData];
+    }];
+    
+    [self.tableView reloadData];
+    [self.searchBar resignFirstResponder];
+}
+
+#pragma 直接根据传进来的self.cityName 进行搜索
+- (void)performSearchWithCityName:(NSString *)cityName {
+    _search = [[WFSearchCity alloc]init];
+    
+    [_search performSearchForText:cityName completion:^(BOOL success,NSArray *searchResult) {
         if (!success) {
             [self showNetWorkError];
         }

@@ -10,7 +10,7 @@
 #import "NFWeatherModel.h"
 #import "NSDate+WFDateExtension.h"
 
-#define SIZE self.frame.size
+#define VIEWSIZE self.frame.size
 
 @interface WFDaysView ()
 @property (nonatomic,strong) NSMutableArray *highTemp;
@@ -48,6 +48,12 @@
     CGMutablePathRef path3 = CGPathCreateMutable();
     CGPathMoveToPoint(path3, nil, 0, 1);
     CGPathAddLineToPoint(path3, nil,self.frame.size.width,1);
+    for (int i=0; i<=12; i++) {
+        CGPathMoveToPoint(path3, nil, VIEWSIZE.width/12*i, 0);
+        CGPathAddLineToPoint(path3, nil, VIEWSIZE.width/12*i, VIEWSIZE.height);
+    }
+    CGPathMoveToPoint(path3, nil, 0, VIEWSIZE.height-1);
+    CGPathAddLineToPoint(path3, nil,VIEWSIZE.width,VIEWSIZE.height-1);
     
     CGContextAddPath(context, path3);
     
@@ -56,12 +62,12 @@
     CGContextDrawPath(context, kCGPathStroke);
     CGPathRelease(path3);
 
-    
+    //如果有天气数据
     if (self.weathersToCalc != nil) {
         self.weathers = self.weathersToCalc;
         //取得图形上下文
 //        CGContextRef context = UIGraphicsGetCurrentContext();
-        
+        /*
         //获取高温点高度
         self.highPoint = [self getHighPoint];
         NSNumber * h0 = _highPoint[0];
@@ -93,6 +99,7 @@
         CGPathAddLineToPoint(path, nil, (40+self.frame.size.width-80)/6*5, h5.intValue);
         CGPathAddLineToPoint(path, nil, (40+self.frame.size.width-80)/6*6, h6.intValue);
         
+        
         CGMutablePathRef path2 = CGPathCreateMutable();
         CGPathMoveToPoint(path2, nil, 50, l0.intValue);
         CGPathAddLineToPoint(path2, nil, 50+(self.frame.size.width-100)/6*1, l1.intValue);
@@ -102,21 +109,158 @@
         CGPathAddLineToPoint(path2, nil, 50+(self.frame.size.width-100)/6*5, l5.intValue);
         CGPathAddLineToPoint(path2, nil, 50+(self.frame.size.width-100)/6*6, l6.intValue);
         
-        //3.添加路径到图形上下文
-        CGContextAddPath(context, path);
+         */
+        
+        //绘制每日最高温度
+        float widthDanwei = (float)self.frame.size.width/24;
+        CGMutablePathRef path1 = CGPathCreateMutable();
+        CGMutablePathRef path2 = CGPathCreateMutable();
+        CGMutablePathRef path3 = CGPathCreateMutable();
+        CGMutablePathRef path4 = CGPathCreateMutable();
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        
+        self.highPoint = [self getHighPoint];   //高温点的y坐标
+        self.lowPoint = [self getLowPoint]; //获取低温点的y坐标
+       
+        /*
+        //1-0.过去7天高温 = 背景白色
+        for (int i = 1; i<=self.highPoint.count; i++) {
+            int x = (i*2-1)*widthDanwei;
+            NSNumber *yNum = _highPoint[i-1];
+            int y = yNum.intValue;
+            
+            if (i == 1) {
+                CGPathMoveToPoint(path1, nil, x, y);
+            }else {
+                CGPathAddLineToPoint(path1, nil, x, y);
+            }
+            //绘制定点
+            CGRect rect = CGRectMake(x-2, y-2, 4, 4);
+            CGContextAddEllipseInRect(context, rect);
+//           [[UIColor colorWithRed:255 green:69 blue:74 alpha:0.8]set];
+            CGContextSetRGBStrokeColor(context, 1, 1, 1, 1);
+            CGContextSetLineWidth(context, 2.0f);//线条宽度
+            CGContextDrawPath(context, kCGPathFillStroke);
+        }
+        CGContextAddPath(context, path1);
+        CGContextSetRGBStrokeColor(context, 1, 1, 1, 1);
+        CGContextSetLineWidth(context, 2.0f);//线条宽度
+        CGContextSetLineCap(context, kCGLineCapRound);//顶点样式
+        //        CGContextSetLineJoin(context, kCGLineJoinRound);//连接点样式
+        CGContextDrawPath(context, kCGPathStroke);
+        */
+        
+        //1.过去7天高温
+        for (int i = 0; i<=7; i++) {
+            int x = (i*2+1)*widthDanwei;
+            NSNumber *yNum = _highPoint[i];
+            int y = yNum.intValue;
+            
+            if (i == 0) {
+                CGPathMoveToPoint(path1, nil, x, y);
+            }else {
+                CGPathAddLineToPoint(path1, nil, x, y);
+            }
+            //绘制定点
+            CGRect rect = CGRectMake(x-2, y-2, 4, 4);
+            CGContextAddEllipseInRect(context, rect);
+//            [[UIColor colorWithRed:255 green:69 blue:74 alpha:0.8]set];
+            CGContextSetRGBStrokeColor(context, 255.0/255.0f, 200/255.0f, 200/255.0f, 1);
+            CGContextSetLineWidth(context, 4.0f);//线条宽度
+            CGContextDrawPath(context, kCGPathFillStroke);
+        }
+        CGContextAddPath(context, path1);
+        CGContextSetRGBStrokeColor(context, 255.0/255.0f, 200/255.0f, 200/255.0f, 1);
+        CGContextSetLineWidth(context, 2.0f);//线条宽度
+        CGContextSetLineCap(context, kCGLineCapRound);//顶点样式
+//        CGContextSetLineJoin(context, kCGLineJoinRound);//连接点样式
+        CGContextDrawPath(context, kCGPathStroke);
+        
+        //2 未来几天
+        for (int i = 7; i<self.highPoint.count; i++) {
+            int x = (i*2+1)*widthDanwei;
+            NSNumber *yNum = _highPoint[i];
+            int y = yNum.intValue;
+            
+            if (i == 7) {
+                CGPathMoveToPoint(path2, nil, x, y);
+            }else {
+                CGPathAddLineToPoint(path2, nil, x, y);
+            }
+            //绘制定点
+            CGRect rect = CGRectMake(x-2, y-2, 4, 4);
+            CGContextAddEllipseInRect(context, rect);
+            CGContextSetRGBStrokeColor(context, 255.0/255.0f, 135/255.0f, 135/255.0f, 1);
+            CGContextSetLineWidth(context, 4.0f);//线条宽度
+            CGContextDrawPath(context, kCGPathFillStroke);
+        }
         CGContextAddPath(context, path2);
+        CGContextSetRGBStrokeColor(context, 255.0/255.0f, 135/255.0f, 135/255.0f, 1);
+        CGContextSetLineWidth(context, 2.0f);//线条宽度
+        CGContextDrawPath(context, kCGPathStroke);
+        
+        
+        //3
+        for (int i=0; i <=7; i++) {
+            float x = (float)(i*2+1)*widthDanwei;
+            NSNumber *yNum = _lowPoint[i];
+            float y = yNum.floatValue;
+            if (i == 0) {
+                CGPathMoveToPoint(path3, nil, x, y);
+            }else {
+                CGPathAddLineToPoint(path3, nil, x, y);
+            }
+            //绘制定点
+            CGRect rect = CGRectMake(x-2, y-2, 4, 4);
+            CGContextAddEllipseInRect(context, rect);
+            CGContextSetRGBStrokeColor(context, 125/255.0f, 255/255.0f, 255/255.0f, 1);
+            CGContextSetLineWidth(context, 4.0f);//线条宽度
+            CGContextDrawPath(context, kCGPathFillStroke);
+        }
+        //3.添加路径到图形上下文
+        CGContextAddPath(context, path3);
+        CGContextSetLineWidth(context, 2.0f);//线条宽度
+        CGContextSetRGBStrokeColor(context, 125/255.0f, 255/255.0f, 255/255.0f, 1);
+        CGContextDrawPath(context, kCGPathStroke);
+        
+        //4
+        for (int i=7; i <self.lowPoint.count; i++) {
+            float x = (float)(i*2+1)*widthDanwei;
+            NSNumber *yNum = _lowPoint[i];
+            float y = yNum.floatValue;
+            if (i == 7) {
+                CGPathMoveToPoint(path4, nil, x, y);
+            }else {
+                CGPathAddLineToPoint(path4, nil, x, y);
+            }
+            //绘制定点
+            CGRect rect = CGRectMake(x-2, y-2, 4, 4);
+            CGContextAddEllipseInRect(context, rect);
+            CGContextSetRGBStrokeColor(context, 65/255.0f, 158/255.0f, 255/255.0f, 1);
+            CGContextSetLineWidth(context, 4.0f);//线条宽度
+            CGContextDrawPath(context, kCGPathFillStroke);
+        }
+        //3.添加路径到图形上下文
+        CGContextAddPath(context, path4);
+        CGContextSetLineWidth(context, 2.0f);//线条宽度
+        CGContextSetRGBStrokeColor(context, 65/255.0f, 158/255.0f, 255/255.0f, 1);
+        CGContextDrawPath(context, kCGPathStroke);
         //4.设置图形上下文状态属性
+        /*
         CGContextSetRGBStrokeColor(context, 1, 1, 1, 1);    //设置笔触颜色
         CGContextSetLineWidth(context, 2.0f);//线条宽度
         CGContextSetLineCap(context, kCGLineCapRound);//顶点样式
         CGContextSetLineJoin(context, kCGLineJoinRound);//连接点样式
+        */
         
         //5.绘制图像到指定图形上下文
         CGContextDrawPath(context, kCGPathStroke);//最后一个参数少填充类型
         
         //6.释放对象
-        CGPathRelease(path);
+        CGPathRelease(path1);
         CGPathRelease(path2);
+        CGPathRelease(path3);
+        CGPathRelease(path4);
         
         
         
@@ -133,28 +277,21 @@
         [v removeFromSuperview];
     }
     
-    for (int i = 0; i<7; i++) {
-        NSNumber *y = _highPoint[i];
+    for (int i = 0; i<_weathers.count; i++) {
+//        NSNumber *y = _highPoint[i];
         NFWeatherModel *weather = _weathers[i];
         //温度label
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake((50+self.frame.size.width-100)/6*i-30, y.intValue-20, 60, 15)];
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(VIEWSIZE.width/12*i, VIEWSIZE.height/2-10, VIEWSIZE.width/12, 15)];
         label.textColor = [UIColor whiteColor];
         int h = (int)weather.hightemp;
         label.text = [NSString stringWithFormat:@"%d°",h];
-        //            if (i == 0) {
-        //                label.textAlignment = NSTextAlignmentRight;
-        //            }else if (i == 6) {
-        //                label.textAlignment = NSTextAlignmentLeft;
-        //            }else {
-        //                label.textAlignment = NSTextAlignmentCenter;
-        //            }
-        
+
         [self addSubview:label];
         //        label.center = CGPointMake((30+self.frame.size.width-60)/6*i, y.intValue-20);
         //        label.textAlignment = NSTextAlignmentCenter;
         
         //天气label
-        UILabel *typeLabel = [[UILabel alloc]initWithFrame:CGRectMake((50+self.frame.size.width-100)/6*i, 60, 60, 15)];
+        UILabel *typeLabel = [[UILabel alloc]initWithFrame:CGRectMake(VIEWSIZE.width/12*i, VIEWSIZE.height/2-30, VIEWSIZE.width/12, 15)];
         typeLabel.textColor = [UIColor whiteColor];
         typeLabel.text = weather.type;
         
@@ -170,7 +307,7 @@
         
         //日期label
         self.dates = [self getDate];
-        UILabel *dateLabel = [[UILabel alloc]initWithFrame:CGRectMake((50+self.frame.size.width-100)/6*i, 40, 60, 15)];
+        UILabel *dateLabel = [[UILabel alloc]initWithFrame:CGRectMake(VIEWSIZE.width/12*i, 40, VIEWSIZE.width/12, 15)];
         dateLabel.textColor = [UIColor whiteColor];
         dateLabel.text = _dates[i];
         dateLabel.textAlignment = NSTextAlignmentCenter;
@@ -183,7 +320,7 @@
         //            }
         [self addSubview:dateLabel];
         
-        
+        /*
         NSNumber *lowpoint = _lowPoint[i];
         UILabel *lowTempLabel = [[UILabel alloc]initWithFrame:CGRectMake((50+self.frame.size.width-100)/6*i, lowpoint.intValue-20, 40, 15)];
         lowTempLabel.textColor = [UIColor whiteColor];
@@ -199,6 +336,7 @@
         //        label.center = CGPointMake((30+self.frame.size.width-60)/6*i, y.intValue-20);
         //        label.textAlignment = NSTextAlignmentCenter;
         [self addSubview:lowTempLabel];
+         */
     }
 
 }
@@ -208,7 +346,7 @@
     NSMutableArray *array = [NSMutableArray array];
     //直接获取日期
     int dayTime = 60*60*24;
-    for (int i=-2; i<5; i++) {
+    for (int i=-7; i<5; i++) {
         NSDate *date = [NSDate dateWithTimeIntervalSinceNow:dayTime*i];
         int day = [date getDay];
         int month = [date getMonth];
@@ -254,8 +392,12 @@
     
 }
 
-
+#pragma mark - 获取高温点 array
 //获取最高温度的高度值，存放NSNumber, 共七天
+/**
+ *  获取最高温度的高度值,最高点为 y = view/2+10
+ *  @result NSArray = @[NSNumber1,NSNumber2,...];
+ */
 - (NSArray *)getHighPoint{
 
     self.highTemp = [self getHighTempFromWeathers:_weathers];
@@ -266,6 +408,7 @@
     int chazhi = 0; //最高温差
     
     int lowestTemp = 400;
+    int highestTemp = 0;
     
     for (NSNumber *h in self.highTemp) {
         for (NSNumber *l in self.lowtemp) {
@@ -278,29 +421,40 @@
             if (l.intValue < lowestTemp) {
                 lowestTemp = l.intValue;
             }
+            //获取最高温度
+            if (h.intValue > highestTemp) {
+                highestTemp = h.intValue;
+            }
         }
     }
     
 //    NSLog(@"最大温差= %d",chazhi);
 //    NSLog(@"最低温度＝ %d",lowestTemp);
     
-    //取出单位温度差的高度
-    int danwei = self.frame.size.height/2/chazhi;
+    //取出单位温度差的高度 的一半（为了使上下温度分离明显）
+    int danwei = (self.frame.size.height/2 - 20)/chazhi/2;
+    
+    //最高温度的y
+    int highestY = self.frame.size.height/2+10;
 //    NSLog(@"单位温差高度 = %d",danwei);
     
     NSMutableArray *result = [[NSMutableArray alloc]init];
     
-    for (int i =0; i<7; i++) {
-//        int x = 30 + 60*i;//每个点的x坐标
-        NSNumber *h = self.highTemp[i];
-        int y = self.frame.size.height - ((h.intValue - lowestTemp)*danwei);
-//        CGPoint point = CGPointMake(x, y);
+    for (int i =0; i<self.highTemp.count; i++) {
+        NSNumber *highTemp = self.highTemp[i];
+        int y = highestY + (highestTemp - highTemp.intValue)*danwei;//以最高点为原点，加上单位x温差
+//        int y = self.frame.size.height - ((h.intValue - lowestTemp)*danwei);
         [result addObject:[NSNumber numberWithInt:y]];
 //        NSLog(@"h[%d] = %d",i,y);
     }
     return (NSArray *)result;
 }
 
+#pragma mark - 获取低温点array
+/**
+ *  获取每日最低温度的高度值,最低点为 Y = self.frame.size.height-20;
+ *  @result NSArray = @[NSNumber1,NSNumber2,...];
+ */
 - (NSArray *)getLowPoint{
     
     
@@ -324,44 +478,39 @@
     }
     
     //取出单位温度差的高度
-    int danwei = self.frame.size.height/2/chazhi;
+    int danwei = (self.frame.size.height/2 - 20)/chazhi/2;
     
 //    NSLog(@"最大温差＝ %d",chazhi);
 //    NSLog(@"最低温度＝ %d",lowestTemp);
 //    NSLog(@"单位温差高度＝ %d",danwei);
+    //最低点
+    int lowestY = self.frame.size.height-20;
     
     NSMutableArray *result = [[NSMutableArray alloc]init];
     
-#warning 可以改成用块遍历
-    for (int i =0; i<7; i++) {
+    for (int i =0; i<self.lowtemp.count; i++) {
         
-        NSNumber *l = self.lowtemp[i];
-        int y = self.frame.size.height - ((l.intValue - lowestTemp)*danwei + 20);
-        //        CGPoint point = CGPointMake(x, y);
+        NSNumber *lowTemp = self.lowtemp[i];
+        int y = lowestY - (lowTemp.intValue-lowestTemp)*danwei;
         [result addObject:[NSNumber numberWithInt:y]];
-//        NSLog(@"l[%d] = %d",i,y);
     }
     return result;
 }
 
+#pragma mark - 获取最高温度 array
 - (NSMutableArray *)getHighTempFromWeathers:(NSArray *)weathersToCalc {
 //    NSLog(@"执行 getHighTempFromWeathers:");
     NSMutableArray *array = [[NSMutableArray alloc]init];
-//    [weathersToCalc enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//        NFWeatherModel *weather = obj;
-//        int i =  (int)weather.hightemp;
-//        NSLog(@"hightemp = %d",i);
-//        [array addObject:[NSNumber numberWithInt:i]];
-//    }];
+
     for (NFWeatherModel *weather in weathersToCalc) {
         int i = (int)weather.hightemp;
-//        NSLog(@"hightemp = '%d'",i);
         [array addObject:[NSNumber numberWithInt:i]];
     }
     
     return array;
 }
 
+#pragma mark - 获取最低温度 array
 - (NSMutableArray *)getLowTempFromWeathers:(NSArray *)weathers {
     NSMutableArray *array = [[NSMutableArray alloc]init];
     [weathers enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -371,25 +520,5 @@
     }];
     return array;
 }
-
-#warning 伪数据，防止crash
-- (void) initData {
-    
-    if (self.weathersToCalc == nil) {
-        NFWeatherModel *weather;
-        NSMutableArray *array = [[NSMutableArray alloc]init];
-        for (int i = 0; i<7; i++) {
-            weather = [[NFWeatherModel alloc]init];
-            weather.hightemp = 30;
-            weather.lowtemp = 20;
-            [array addObject:weather];
-        }
-
-        self.weathers = array;
-    }else {
-        self.weathers = self.weathersToCalc;
-    }
-}
-
 
 @end

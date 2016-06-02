@@ -13,7 +13,9 @@
 #import "NFCityWeatherModel.h"
 #import "MJRefresh.h"
 #import "WFCityManageViewController.h"
+#import "WFSearchCityViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "YALSunnyRefreshControl.h"
 
 #define SCREEN self.view.frame.size
 
@@ -55,15 +57,15 @@
 @property (nonatomic,strong) UIScrollView *mainScrollView;
 @property (nonatomic,strong) UIScrollView *daysScrollView;
 
-
 //下拉刷新
-
+@property (nonatomic,strong) YALSunnyRefreshControl *sunnyRefreshControl;
 @end
 
 @implementation WFSecondMainViewController {
     __block NSString *_city;
     CLLocationManager *locationManager;
     __block NSMutableString *_cityPinYin;
+    int currentCityNumber;
 }
 
 - (void)viewDidLoad {
@@ -73,11 +75,6 @@
     self.view.backgroundColor = [UIColor colorWithRed:0 green:150/255.0f blue:1 alpha:1];
 
     self.navigationController.delegate = self;
-    //初始化伪数据
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            [self initData];
-        });
     
     //加载数据
     [self loadCityWeathers];
@@ -89,14 +86,49 @@
     [self loadViewWithCities];
 //    [self initLayout];
     
+    //初始化伪数据
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self initData];
+    });
+
+    if (self.cities.count == 0) {
+        WFSearchCityViewController *searchCityVC = [[WFSearchCityViewController alloc]init];
+        [self.navigationController pushViewController:searchCityVC animated:YES];
+    }
     
-    
+    [self setupRefreshControl];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    [self saveCityWeather];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark 下拉刷新
+- (void)setupRefreshControl {
+//    self.sunnyRefreshControl = [YALSunnyRefreshControl attachToScrollView:self.mainScrollView
+//                                                                   target:self
+//                                                            refreshAction:@selector(sunnyControlDidStartAnimation)];
+//    self.sunnyRefreshControl = [YALSunnyRefreshControl attachToScrollView:self.mainScrollView];
+    self.sunnyRefreshControl = [YALSunnyRefreshControl new];
+    [self.sunnyRefreshControl addTarget:self
+                                 action:@selector(sunnyControlDidStartAnimation)
+                       forControlEvents:UIControlEventValueChanged];
+    [self.sunnyRefreshControl attachToScrollView:self.mainScrollView];
+    
+}
+-(void)sunnyControlDidStartAnimation{
+    NSLog(@"sunnyControlDidStartAnimation");
+    // start loading something
+}
+
+-(IBAction)endAnimationHandle{
+    
+    [self.sunnyRefreshControl endRefreshing];
+}
+                                                                        
 
 
 #pragma mark KVO监听方法
@@ -152,6 +184,7 @@
     
     self.cities = [[NSMutableArray alloc]init];
     
+    /*
     //伪数据
     NFCityWeatherModel *cityWeather = [[NFCityWeatherModel alloc]init];
     cityWeather.cityName = @"广州";
@@ -165,14 +198,24 @@
     cityWeather2.cityName = @"沧州";
     [self.cities addObject:cityWeather2];
     NSLog(@"-initData:_weathers.count = %ld",_cities.count);
+     */
+    
 
-    [self saveCityWeather];
-    [self loadViewWithCities];
+    [self loadCityWeathers];
     
     //如果没有天气数据，则加载数据
-    for (NFCityWeatherModel *tempCityWeather in _cities) {
-        if (!tempCityWeather.weathers|| tempCityWeather.weathers.count < 7) {
-            [self getWeatherForCityWeather:tempCityWeather];
+    if (self.cities.count == 0) {
+//        NFCityWeatherModel *tempCityWeather = [[NFCityWeatherModel alloc]init];
+//        tempCityWeather.cityName = [self getLoacation];
+//        [self.cities addObject:tempCityWeather];//执行此代码时定位没有成功,延迟导致bug
+//        [self getWeatherForCityWeather:tempCityWeather];
+//        [self updateViewWithCityWeather:tempCityWeather];
+    } else {
+            for (NFCityWeatherModel *tempCityWeather in _cities) {
+            if (!tempCityWeather.weathers|| tempCityWeather.weathers.count < 7) {
+                [self getWeatherForCityWeather:tempCityWeather];
+                [self updateViewWithCityWeather:tempCityWeather];
+            }
         }
     }
     
@@ -263,8 +306,8 @@
     
     //次滑动视图，温度折线图
     self.daysScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height/5*3, self.view.frame.size.width, self.view.frame.size.height/5*2)];
-    _daysScrollView.contentOffset = CGPointMake(0, 0);
-    _daysScrollView.contentSize = CGSizeMake(self.view.frame.size.width*1.5, self.view.frame.size.height/5*2);
+    _daysScrollView.contentOffset = CGPointMake(_daysScrollView.frame.size.width, 0);
+    _daysScrollView.contentSize = CGSizeMake(self.view.frame.size.width*2, self.view.frame.size.height/5*2);
     _daysScrollView.showsVerticalScrollIndicator = NO;
     _daysScrollView.delegate = self;
     _daysScrollView.backgroundColor = [UIColor clearColor];
@@ -338,8 +381,8 @@
     humidityLabel.textColor = [UIColor whiteColor];
     humidityLabel.textAlignment = NSTextAlignmentCenter;
     humidityLabel.font = labelFont;
-    humidityLabel.layer.borderColor = [UIColor whiteColor].CGColor;
-    humidityLabel.layer.borderWidth = 1;
+//    humidityLabel.layer.borderColor = [UIColor whiteColor].CGColor;
+//    humidityLabel.layer.borderWidth = 1;
     [view addSubview:humidityLabel];
     //空气湿度 tag ＝ 1004
     UILabel *humidityLabel2 = [[UILabel alloc]initWithFrame:CGRectMake(80, 250, humidityLabel.frame.size.width, 30)];
@@ -423,7 +466,7 @@
     //    self.daysView.weathersToCalc = new??
     
     //获取今日天气
-    if (cityWeather.weathers.count < 7) {
+    if (cityWeather.weathers.count < 12) {
         return;
     }
     
@@ -435,7 +478,7 @@
     UIView *view = viewArray[i];
     
     
-    NFWeatherModel *todayWeather = cityWeather.weathers[2];
+    NFWeatherModel *todayWeather = cityWeather.weathers[7];
     //刷新温度线视图
     self.daysView.weathersToCalc = cityWeather.weathers;
     [self.daysView setNeedsDisplay];
@@ -508,11 +551,11 @@
                                if (error) {
                                    NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
                                } else {
-#pragma mark 解析数据   
+#pragma mark 解析数据
                                    cityWeather.weathers = [self parseWeatherJSONData:data];
                                    
                                    //如何判断数据下载完成？
-                                   if (cityWeather.weathers.count == 7) {
+                                   if (cityWeather.weathers.count == 12) {
                                        //刷新视图
                                        //更新时间
                                        cityWeather.lastDate = [NSDate date];
@@ -535,29 +578,39 @@
     NSMutableArray *weathers = [[NSMutableArray alloc]init];
     
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSLog(@"dict = %@",dict);
+    //一种错误
+    if ([dict[@"errNum"]  isEqual: @-1]) {
+        NSLog(@"错误");
+        return nil;
+    }
+    //天气dic
     NSDictionary *retData = dict[@"retData"];
     NSLog(@"retData = %@",dict);
-    
+    //未来四天array
     NSMutableArray *forecast = [retData[@"forecast"] mutableCopy];
-    NSDictionary *today = retData[@"today"];
-    
-    NSMutableArray *history = [retData[@"history"] mutableCopy];
     NSLog(@"forecast = %@",forecast);
-    
+    //今天 dic
+    NSDictionary *today = retData[@"today"];
+    //过去七天 array
+    NSMutableArray *history = [retData[@"history"] mutableCopy];
+//    NSLog(@"history = %@",history);
     
     //过去两天的数据
-    for (int i = 0; i < 2; i++) {
-        NSDictionary *tempDict = history[5+i];
-        NFWeatherModel *weatherModel = [[NFWeatherModel alloc]init];
-        weatherModel.type = tempDict[@"type"];
-        weatherModel.week = tempDict[@"week"];
-        weatherModel.date = tempDict[@"date"];
-        weatherModel.hightemp = [tempDict[@"hightemp"] integerValue];
-        weatherModel.lowtemp = [tempDict[@"lowtemp"]integerValue];
-        [weathers addObject:weatherModel];
-        
+    if(history.count == 7) {
+        for (int i = 0; i < 7; i++) {
+            NSDictionary *tempDict = history[i];
+            NFWeatherModel *weatherModel = [[NFWeatherModel alloc]init];
+            weatherModel.type = tempDict[@"type"];
+            weatherModel.week = tempDict[@"week"];
+            weatherModel.date = tempDict[@"date"];
+            weatherModel.hightemp = [tempDict[@"hightemp"] integerValue];
+            weatherModel.lowtemp = [tempDict[@"lowtemp"]integerValue];
+            [weathers addObject:weatherModel];
+        }
     }
     
+    // 位置在 [7]
     NFWeatherModel *todayWeatherModel = [[NFWeatherModel alloc]init];
     todayWeatherModel.week = today[@"week"];
     todayWeatherModel.curTemp = [today[@"curTemp"]integerValue];
@@ -582,6 +635,7 @@
         [weathers addObject:weatherModel];
     }
     
+//    NSLog(@"weathers.count = %d",(int)weathers.count);
     return weathers;
 }
 
@@ -591,24 +645,44 @@
     //如果主视图滑动，切换城市，刷新视图
     if (scrollView == _mainScrollView) {
         
-        int i = scrollView.contentOffset.x/scrollView.frame.size.width;
-        
-        self.pageControl.currentPage = i;
+        currentCityNumber = scrollView.contentOffset.x/scrollView.frame.size.width;
         
         
-        NFCityWeatherModel *cityWeather =_cities[i];
+        [self reloadDaysWeatherViewAndPageControl];
+        //用 reloadDaysWeatherViewAndPageControl 封装下面的代码
+        //self.pageControl.currentPage = currentCityNumber;
+        
+//         self.daysScrollView.contentOffset = CGPointMake(self.daysScrollView.frame.size.width, 0);
+        //刷新温度折线图
+        /*
+        NFCityWeatherModel *cityWeather =_cities[currentCityNumber];
         self.daysView.weathersToCalc = cityWeather.weathers;
         [self.daysView setNeedsDisplay];
+        self.daysScrollView.contentOffset = CGPointMake(self.daysScrollView.frame.size.width, 0);
+         */
         }
 }
 
 #pragma mark 刷新动作 
 -(void) refreshClick:(UIButton *)button {
-    int currentCityNumber = (int)self.mainScrollView.contentOffset.x/self.mainScrollView.frame.size.width;
+    currentCityNumber = (int)self.mainScrollView.contentOffset.x/self.mainScrollView.frame.size.width;
     if (currentCityNumber < _cities.count) {
         NFCityWeatherModel *currentCity = _cities[currentCityNumber];
         [self getWeatherForCityWeather:currentCity];
         [self updateViewWithCityWeather:currentCity];
+        [self reloadDaysWeatherViewAndPageControl];
+    }
+}
+
+#pragma mark 刷新折线图方法
+- (void)reloadDaysWeatherViewAndPageControl {
+    currentCityNumber = (int)self.mainScrollView.contentOffset.x/self.mainScrollView.frame.size.width;
+    if (currentCityNumber < _cities.count) {
+        NFCityWeatherModel *cityWeather =_cities[currentCityNumber];
+        self.daysView.weathersToCalc = cityWeather.weathers;
+        [self.daysView setNeedsDisplay];
+        self.daysScrollView.contentOffset = CGPointMake(self.daysScrollView.frame.size.width, 0);
+        self.pageControl.currentPage = currentCityNumber;
     }
 }
 
@@ -627,6 +701,13 @@
     NSLog(@"cities.count = '%lu'",(unsigned long)self.cities.count);
 }
 
+- (void)WFCityTableViewController:(WFCityManageViewController *)viewController didSelectedRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.navigationController popViewControllerAnimated:YES];
+//    NSLog(@"indexPath.row = %d",indexPath.row);
+    currentCityNumber = (int)indexPath.row;
+//    self.mainScrollView.contentOffset = CGPointMake(indexPath.row*_mainScrollView.frame.size.width, 0);
+}
+
 #pragma mark navigationController Delegate 方法
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     NSLog(@"调用navigationController代理方法,navigationController:willShowViewController:animated:");
@@ -636,10 +717,31 @@
         for (int i = 0; i<_cities.count; i++) {
             [self updateViewWithCityWeather:_cities[i]];
         }
+        //重设
+//        self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+//        self.navigationController.navigationBar.translucent = YES;//不透明
+        //    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+        [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
     }
+    //保存数据，移动主视图，刷新折线图
+    [self saveCityWeather];
+    self.mainScrollView.contentOffset = CGPointMake(currentCityNumber*_mainScrollView.frame.size.width, 0);
+    [self reloadDaysWeatherViewAndPageControl];
 }
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *cityData = [defaults objectForKey:@"addCity"];
+    NFCityWeatherModel *city = [NSKeyedUnarchiver unarchiveObjectWithData:cityData];
+    if (city) {
+        [self.cities addObject:city];
+        [defaults removeObjectForKey:@"addCity"];
+//        self.mainScrollView.contentOffset = CGPointMake(self.mainScrollView.contentSize.width-self.mainScrollView.frame.size.width, 0);//跳转到最后一页
+        NFCityWeatherModel *currentCity = _cities.lastObject;
+        [self getWeatherForCityWeather:currentCity];
+        [self updateViewWithCityWeather:currentCity];
+    }
     
     NSLog(@"navigationController show view = %@",self);
     if (viewController == self) {
@@ -647,6 +749,97 @@
         for (int i = 0; i<_cities.count; i++) {
             [self updateViewWithCityWeather:_cities[i]];
         }
+    }
+    //保存数据，移动主视图，刷新折线图
+    [self saveCityWeather];
+    self.mainScrollView.contentOffset = CGPointMake(currentCityNumber*_mainScrollView.frame.size.width, 0);
+    [self reloadDaysWeatherViewAndPageControl];
+}
+
+
+#pragma mark 给定 city 获取地址
+
+- (void) getLocalCityForCityWeather:(NFCityWeatherModel *)cityWeater {
+    
+}
+
+#pragma mark 获取地址,赋值给 _city
+- (NSString *) getLoacation {
+    
+    [self initializeLocationService];
+    _city = [[NSString alloc]init];
+    NSLog(@"return city = '%@'",_city);
+    return _city;
+}
+
+
+
+#pragma mark - 初始化定位管理器
+- (void)initializeLocationService {
+    // 判断是否开启定位
+    if ([CLLocationManager locationServicesEnabled]) {
+        locationManager = [[CLLocationManager alloc] init];
+        locationManager.delegate = self;
+        [locationManager requestAlwaysAuthorization];
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        locationManager.distanceFilter = 10;
+        [locationManager startUpdatingLocation];
+    }
+}
+#pragma mark - 定位代理方法
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    
+    NSLog(@"经度:%lf",newLocation.coordinate.longitude);
+    NSLog(@"纬度:%lf",newLocation.coordinate.latitude);
+    // 获取当前所在的城市名
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    //根据经纬度反向地理编译出地址信息
+    [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *array, NSError *error){
+        if (array.count > 0){
+            CLPlacemark *placemark = [array objectAtIndex:0];
+            //            NSLog(@"placemark = %@",placemark);
+            //获取城市
+            NSString *city = placemark.locality;
+            if (!city) {
+                //四大直辖市的城市信息无法通过locality获得，只能通过获取省份的方法来获得（如果city为空，则可知为直辖市）
+                city = placemark.administrativeArea;
+            }
+            NSLog(@"city = '%@'", city);
+            //将获得的城市名，去掉“市”
+            city = [city stringByReplacingOccurrencesOfString:@"市" withString:@""];
+            NSLog(@"city = %@",city);
+            _city = city;
+            
+            //转换拼音
+            _cityPinYin = [city mutableCopy];
+            CFStringTransform((__bridge CFMutableStringRef)_cityPinYin, NULL, kCFStringTransformMandarinLatin, NO);
+            CFStringTransform((__bridge CFMutableStringRef)_cityPinYin, NULL, kCFStringTransformStripCombiningMarks, NO);
+            NSLog(@"获取地址'%@''%@'",city,_cityPinYin);
+            _cityPinYin = [[_cityPinYin stringByReplacingOccurrencesOfString:@" " withString:@""]mutableCopy];
+            
+            //如果定位刷新，重新获取天气，刷新视图
+            
+        }
+        else if (error == nil && [array count] == 0)
+        {
+            NSLog(@"No results were returned.");
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"定位失败" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        else if (error != nil)
+        {
+            NSLog(@"An error occurred = %@", error);
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"定位失败" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }];
+    //系统会一直更新数据，直到选择停止更新，因为我们只需要获得一次经纬度即可，所以获取之后就停止更新
+    [manager stopUpdatingLocation];
+}
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    if (error.code == kCLErrorDenied) {
+        // 提示用户出错原因，可按住Option键点击 KCLErrorDenied的查看更多出错信息，可打印error.code值查找原因所在
     }
 }
 @end

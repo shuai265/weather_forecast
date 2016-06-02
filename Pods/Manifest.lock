@@ -1,12 +1,15 @@
 PODS:
+  - DZNEmptyDataSet (1.8.1)
   - SVPullToRefresh (0.4.1)
 
 DEPENDENCIES:
+  - DZNEmptyDataSet
   - SVPullToRefresh (~> 0.4.1)
 
 SPEC CHECKSUMS:
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
-PODFILE CHECKSUM: cbe8cafbcec1a6ffded78c68cde1ed93439674a9
+PODFILE CHECKSUM: dcea71d0ea3983786575d145102086de2e8b20eb
 
 COCOAPODS: 1.0.0

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DZNEmptyDataSet.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-weatherForecast.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,17 +32,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>3A492DD85D5B1058E2139FE4F58A531A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6238E65270373CD11EF546A27A4F9B49</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>736E57AD5AEFAAF68D47AE4E8FCB8F68</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A08814FDE6F0F4DA2E6B2751D81B3C68</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A1F016E42E1246ECAB67B1324B1BE670</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D87D0C6E287B532DC57C269758DAF73F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

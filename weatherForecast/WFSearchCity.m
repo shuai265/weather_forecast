@@ -57,7 +57,7 @@ static NSOperationQueue *queue = nil;
                                    if (error) {
                                        NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
                                        self.isLoading = NO;
-                                       block(NO);
+                                       block(NO,nil);
                                    } else {
                                        NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
                                        NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -67,7 +67,7 @@ static NSOperationQueue *queue = nil;
                                        [self parseDictionary:searchResultDict];
                                        
                                        self.isLoading = NO;
-                                       block(YES);
+                                       block(YES,self.searchResult);
                                    }
                                }];
         
@@ -91,7 +91,7 @@ static NSOperationQueue *queue = nil;
                                } else {
                                    NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
                                    NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                                   NSLog(@"HttpResponseCode:%ld", responseCode);
+                                   NSLog(@"HttpResponseCode:%ld", (long)responseCode);
                                    NSLog(@"HttpResponseBody %@",[responseString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
                                    NSDictionary *searchResultDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                                    [self parseDictionary:searchResultDict];
@@ -112,7 +112,7 @@ static NSOperationQueue *queue = nil;
     }
 
     for (NSDictionary *resultDict in array) {
-//        NSLog(@"search result dic in array = '%@'",resultDict);
+        NSLog(@"search result dic in array = '%@'",resultDict);
         NFCityWeatherModel *city = [[NFCityWeatherModel alloc]init];
         city.cityName = resultDict[@"name_cn"];
         city.province_cn = resultDict[@"province_cn"];

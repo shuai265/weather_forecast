@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^SearchBlock)(BOOL success);
+@class NFCityWeatherModel;
+typedef void (^SearchBlock)(BOOL success,NSArray *searchResult);
 
 @interface WFSearchCity : NSObject
 @property (nonatomic,assign) BOOL isLoading;

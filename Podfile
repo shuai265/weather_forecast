@@ -10,6 +10,7 @@ target 'weatherForecast' do
   target 'weatherForecastTests' do
     inherit! :search_paths
     pod 'SVPullToRefresh', '~> 0.4.1'
+    pod 'DZNEmptyDataSet'
     # Pods for testing
   end
 

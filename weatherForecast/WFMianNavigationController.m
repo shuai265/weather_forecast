@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.tintColor = [UIColor whiteColor];
+    self.view.tintColor = [UIColor grayColor];
     // Do any additional setup after loading the view.
 }
 

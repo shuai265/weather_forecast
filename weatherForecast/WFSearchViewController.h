@@ -18,5 +18,6 @@
 @end
 
 @interface WFSearchViewController : UIViewController
+@property (nonatomic,copy) NSString *searchText;
 @property (nonatomic,weak) id<WFSearchViewControllerDelegate> delegate;
 @end

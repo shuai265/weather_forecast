@@ -17,8 +17,8 @@
 @property (nonatomic,strong) NSDate *lastDate;//上次刷新时间
 @property (nonatomic,strong) NFWeatherModel *currentWeather;//实时天气
 
-@property (nonatomic,copy) NSString *province_cn;
-@property (nonatomic,copy) NSString *district_cn;
-@property (nonatomic,copy) NSString *name_cn;
-@property (nonatomic,copy) NSString *area_id;
+@property (nonatomic,copy) NSString *province_cn;//省
+@property (nonatomic,copy) NSString *district_cn;//市
+@property (nonatomic,copy) NSString *name_cn;////区、县
+@property (nonatomic,copy) NSString *area_id;//城市代码
 @end

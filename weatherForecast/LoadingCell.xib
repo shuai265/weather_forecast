@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lBq-qR-obq">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lBq-qR-obq" id="R95-9S-UOu">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <activityIndicatorView opaque="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9ug-ca-OW3">
+                        <rect key="frame" x="196" y="12" width="20" height="20"/>
+                    </activityIndicatorView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在搜索..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVj-Sm-GXB">
+                        <rect key="frame" x="106" y="11" width="82" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="YVj-Sm-GXB" firstAttribute="leading" secondItem="R95-9S-UOu" secondAttribute="leadingMargin" constant="98" id="2XK-Lf-6bX"/>
+                    <constraint firstItem="9ug-ca-OW3" firstAttribute="bottom" secondItem="YVj-Sm-GXB" secondAttribute="bottom" id="C1v-3S-ego"/>
+                    <constraint firstItem="YVj-Sm-GXB" firstAttribute="centerY" secondItem="R95-9S-UOu" secondAttribute="centerY" id="YlU-pi-kBU"/>
+                    <constraint firstItem="9ug-ca-OW3" firstAttribute="centerY" secondItem="YVj-Sm-GXB" secondAttribute="centerY" id="ZXg-zV-0Vw"/>
+                    <constraint firstItem="9ug-ca-OW3" firstAttribute="leading" secondItem="YVj-Sm-GXB" secondAttribute="trailing" constant="8" symbolic="YES" id="dHe-DX-aE1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="214" y="241"/>
+        </tableViewCell>
+    </objects>
+</document>
