@@ -11,9 +11,11 @@
 #import "NFWeatherModel.h"
 #import "WFSearchViewController.h"
 #import "WFSearchCityViewController.h"
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
+#import <objc/runtime.h>
 
-@interface WFCityManageViewController ()<WFSearchViewControllerDelegate,UINavigationControllerDelegate>
+@interface WFCityManageViewController ()<WFSearchViewControllerDelegate,UINavigationControllerDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 
 @end
 
@@ -21,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
 //    self.navigationController.delegate = self;
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:1];
@@ -48,6 +51,13 @@
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressGestureRecognized:)];
     [self.tableView addGestureRecognizer:longPress];
     
+    
+    self.tableView.delegate = self;
+    //空视图
+    self.tableView.emptyDataSetSource = self;
+    self.tableView.emptyDataSetDelegate = self;
+    //
+//    self.tableView.tableFooterView = [UIView new];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -228,4 +238,96 @@
     [self.tableView reloadData];
 }
 
+#pragma mark - Data Source Implementation
+//The image for the empty state:
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
+    return [UIImage imageNamed:@"login_bg@3x.png"];
+}
+
+//The image view animation
+- (CAAnimation *)imageAnimationForEmptyDataSet:(UIScrollView *)scrollView {
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform"];
+    
+    animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+    animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(M_PI_2, 0.0, 0.0, 1.0)];
+    
+    animation.duration = 0.25;
+    animation.cumulative = YES;
+    animation.repeatCount = MAXFLOAT;
+    
+    return animation;
+}
+
+//The attributed string for the title of the empty state
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
+    NSString *text = @"Please Allow Photo Access";
+    
+    NSDictionary *attributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:18], NSForegroundColorAttributeName:[UIColor darkGrayColor]};
+    return [[NSAttributedString alloc]initWithString:text attributes:attributes];
+}
+//The attributed string for the description of the empty state:
+- (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView {
+    NSString *text = @"This allows you to share photos from your library and save photo to your camera roll.";
+    
+    NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
+    paragraph.lineBreakMode = NSLineBreakByWordWrapping;
+    paragraph.alignment = NSTextAlignmentCenter;
+    
+    NSDictionary *attributes = @{ NSFontAttributeName: [UIFont systemFontOfSize:14.0f], NSForegroundColorAttributeName: [UIColor lightGrayColor],NSParagraphStyleAttributeName:paragraph};
+    
+    return [[NSAttributedString alloc]initWithString:text attributes:attributes];
+}
+
+- (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state {
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:17.0f]};
+    return [[NSAttributedString alloc]initWithString:@"Continue" attributes:attributes];
+}
+
+- (UIImage *)buttonImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state {
+    return [UIImage imageNamed:@"雾霾.png"];
+}
+- (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView {
+    return [UIColor whiteColor];
+}
+- (UIView *)customViewForEmptyDataSet:(UIScrollView *)scrollView {
+    UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [activityView startAnimating];
+    return activityView;
+}
+
+- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView {
+    return -self.tableView.tableHeaderView.frame.size.height/2.0f;
+}
+- (CGFloat)spaceHeightForEmptyDataSet:(UIScrollView *)scrollView  {
+    return 20.0f;
+}
+
+- (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView
+{
+    return YES;
+}
+
+- (BOOL)emptyDataSetShouldAllowTouch:(UIScrollView *)scrollView
+{
+    return YES;
+}
+
+- (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView
+{
+    return YES;
+}
+
+- (BOOL) emptyDataSetShouldAllowImageViewAnimate:(UIScrollView *)scrollView
+{
+    return YES;
+}
+
+- (void)emptyDataSet:(UIScrollView *)scrollView didTapView:(UIView *)view
+{
+    // Do something
+}
+- (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button
+{
+    // Do something
+}
 @end
